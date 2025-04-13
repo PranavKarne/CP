@@ -1,0 +1,34 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Build and Run BSL1",
+        "type": "shell",
+        "command": "clang++",
+        "args": [
+          "-std=c++17",
+          "-Wall",
+          "L1/BSL1.cpp",
+          "-o",
+          "L1/BSL1"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": [],
+        "detail": "Compiles and runs BSL1.cpp"
+      },
+      {
+        "label": "Run BSL1",
+        "type": "shell",
+        "command": "./L1/BSL1",
+        "dependsOn": "Build and Run BSL1",
+        "group": {
+          "kind": "test",
+          "isDefault": true
+        }
+      }
+    ]
+  }
+  

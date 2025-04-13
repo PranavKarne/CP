@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Run BSL1",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/L1/BSL1",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}/L1",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "lldb"
+      }
+    ]
+  }
+  
