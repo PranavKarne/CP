@@ -18,14 +18,24 @@ does not give up best answer , then your strategy is wrong
 where u r strategy cannot be applied then tht is ok , if on applying , when it can be  applied , it fails it means the strategy 
 is wrong
 
-8.if we say tht we tried out all the possible cases and the strategy worked on all of them , then it is the correct strategy
-
-9.  for formal proof , we have to write mathematical eqns and tht is how u prove it
-10. Greedy is subjective , not all problems are intuitive for everyone
+8. if we say tht we tried out all the possible cases and the strategy worked on all of them , then it is the correct strategy
+9. for formal proof , we have to write mathematical eqns and tht is how u prove it
+10. Greedy is subjective , not all problems are intuitive for everyone 
 11. we dont have to try out all the cases , we'll have a strategy tht works 
 12. in cp problems , if the order of the elements doesnt matter then sort the array/vector and then start thinking  abt the problem this 
-for any CP problem
-13. 
+is for any CP problem , sorted arrays are easier to visualize 
+13. anything that is obvious for u , u dont have to prove it , anything which u r not 100% sure , u always have to  prove it before submitting
+14. when im saying a greedy strategy works on a particular set of data or type of data , does it mean it cannot work on any other type of data? No
+it means tht i have proved tht greedy stratedy works on this type of data , i havent prove tht this greedy strategy also works on other particular 
+type of data , but it does not mean that it'll not work on any other data.
+15.so there can be certain cases in greedy where greedy strategy just works and u dont know why it works.
+16. so when we are saying how do we solve a problem , we look at the problem , we look at the data or observations in the problem
+then we make a claim , we prove the claim , when we are proving the claim it means tht this claim works for the data given in the problem
+this claim can also work for someother problem with someother data but tht would require separate proof for tht
+17. 
+
+
+
 
 
 
