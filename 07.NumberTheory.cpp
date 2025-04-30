@@ -76,8 +76,7 @@ gcd and lcm calculation in school
 
 extract the minimum of the powers for gcd -> 2^2 * 3^0 -> 4
 
-LCM of 4 , 12 
-
+LCM of 4 , 12 : 
 we extract the maximum of the powers for lcm 
 2^2 * 3^1  -> 12 
 
@@ -95,7 +94,7 @@ relationship b/w gcd and lcm
 LCM(a,b) = a*b / GCD(a,b)
 
 Euclid's Algorithm :
-
+(long division method)
 */
 
 int gcd(int a , int b){
@@ -103,24 +102,49 @@ int gcd(int a , int b){
     // or if(b==0) return a;
     return gcd(b,a%b);
 
-    //TC = O()
+    //TC = O(log n) // depends on numbers , its generalized TC
+    //gcd(a,b) = gcd(b,a%b) // only if b is not zero , if b is 0 then a%b will become not defined.
+
+    // to find the simplest fraction form of a/b 
+    // a/b = a/gcd(a,b) / b/gcd(a,b)
+     
+
 }
 
 int main(){
+
     cout << gcd(12,18) << endl;
     cout << gcd(18,12) << endl;
+    //doesnt matter if the bigger number if 1st or not , as in long division method
+    //the reminder(a%b)(non-zero) becomes the divisor and the divisor(previous)(b) becomes the dividend 
 
-    //doesnt matter if the bigger number if 1st or not , as in long division method , the reminder and divisor are swapped after 1 step of long division
-    
+
     //in-built fxn 
     cout << __gcd(20,10) << endl;
 
-    
-
-
-
-
 }
+
+/*
+Binary Exponentiation =  power fxn algo (a^b)
+
+
+ we can use inbuilt pow() fxn but it has precision errors
+ the pow() returns in double data type
+ double is not accurate , not exact sometimes
+
+*/
+// Calculating power in O(N)
+
+const int M = 1e9 + 7;
+int a = 2 ;
+int b = 3;
+int ans = 1;
+/* for(int i = 0 ;i < b;i++){
+    ans *= a; 
+    ans %= M;
+}
+*/
+
 
 
 
