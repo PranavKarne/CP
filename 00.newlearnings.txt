@@ -1,0 +1,24 @@
+1. stoi() = string to integer conversion
+
+string str = "456";
+int num = stoi(str);
+
+cout << "integer : " << num << endl;
+cout << "string : " << str << endl;
+
+
+2.printing zeroes after decimal point 
+
+double d = 1e20;
+cout << fixed << setprecision(25) << d ;
+
+output : 100000000000000000000.0000000000000000000000000
+
+double  d = 1e9;
+cout << fixed << setprecision(15) << d ;
+
+output :  1000000000.000000000000000
+
+
+
+

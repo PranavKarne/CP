@@ -32,16 +32,5 @@ type of data , but it does not mean that it'll not work on any other data.
 16. so when we are saying how do we solve a problem , we look at the problem , we look at the data or observations in the problem
 then we make a claim , we prove the claim , when we are proving the claim it means tht this claim works for the data given in the problem
 this claim can also work for someother problem with someother data but tht would require separate proof for tht
-17. 
-
-
-
-
-
-
-
-
-
-
 */
 
