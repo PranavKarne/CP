@@ -125,12 +125,12 @@ int main(){
 }
 
 /*
+
 Binary Exponentiation =  power fxn algo (a^b)
 
-
- we can use inbuilt pow() fxn but it has precision errors
- the pow() returns in double data type
- double is not accurate , not exact sometimes
+we can use inbuilt pow() fxn but it has precision errors
+the pow() inbuilt fxn returns in double data type , in CP accurate answers are checked 
+double is not accurate , not exact sometimes ,  though it can store large values , we try to avoid double in CP
 
 */
 // Calculating power in O(N)
@@ -142,8 +142,78 @@ int ans = 1;
 /* for(int i = 0 ;i < b;i++){
     ans *= a; 
     ans %= M;
-}
 */
+
+// to print zeroes after decimal point
+
+double d = 1e20;
+// cout << fixed << setprecision(25) << d;
+
+//output :  100000000000000000000.0000000000000000000000000
+//25 zeroes after decimal
+
+
+/*
+calculating 2^16 using divide and conquer technique , basis on binary exponentiation
+2^16 = 2^8 * 2^8
+2^8  = 2^4 * 2^4 
+2^4 = 2^2 * 2^2
+2^2 = 2^1 * 2^1
+
+in 4 steps , we can calculate 2^16 , instead of 16 steps 
+
+for a^b , the TC is O(log b)
+for odd power ex:  3^13 , we ll convert to even power 
+3^13 = 3^1 * 3^12
+3^12 = 3^6 * 3^6
+.       .     .
+.       .     .
+3^2 = 3 * 3^1
+*/
+
+// Recursive method for binary exponentiation 
+
+int binaryexpoRecur(int a , int b){
+        if(b==0) return 1;
+        int res = binaryexpoRecur(a,b/2);
+        if(b&1) // checks if b is odd 
+        { 
+            return a * res * res;
+        }
+        else
+        {
+            return  res * res;
+        }
+}
+
+// if asked for Modulo 
+
+int binaryexpoRecur(int a , int b){
+    if(b==0) return 1;
+    long long res = binaryexpoRecur(a,b/2);
+    if(b&1) // checks if b is odd 
+    { 
+        return (a * ((res * res) % M )) % M;
+    }
+    else
+    {
+        return  res * res;
+    }
+}
+
+// Iterative Method - Binary Exponentiation (faster)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
