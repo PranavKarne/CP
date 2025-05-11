@@ -19,7 +19,7 @@ cout << fixed << setprecision(15) << d ;
 
 output :  1000000000.000000000000000
 
-
+3.
 
 
 
