@@ -35,7 +35,7 @@ int main()
 
 
      // when we take input as 21 , it gives -ve output , it overflows , long long also cannot store fact of 21.
-     // qs when answer is very big , we use modulo 
+     // in qs when answer is very very  big , we use modulo 
 
 
 
@@ -202,6 +202,17 @@ int binaryexpoRecur(int a , int b){
 }
 
 // Iterative Method - Binary Exponentiation (faster)
+
+
+
+
+
+
+
+
+
+
+
 
 
 

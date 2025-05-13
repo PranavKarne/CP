@@ -11,7 +11,7 @@ to optimize performance during execution.
 
 
 1. Given T test cases and in each test case a number N . 
-print its fcatorial for each test case % M
+print its factorial for each test case % M
 where M = 10^9 + 7 
 
 contraints
@@ -39,6 +39,7 @@ int main(){
 
     // O(T*N) --> O(N^2) --> 10^10 
     // if timelimit is 1sec in the qs  then it will give error 
+    //in 1sec we have 10^8 operations generally
 
 
 
@@ -65,6 +66,7 @@ int main(){
         //O(N) + O(T) = O(N)
 
 }
+ 
 
 /*
 
@@ -82,6 +84,7 @@ Constraints
 
 
 // normal approach
+
 int n ; cin >> n ;
 int a[n];
 for(int i = 0 ; i < n ; i++){
@@ -102,6 +105,7 @@ cout << ct << endl;
 
 
 /*
+
 
 Hashing
 
@@ -124,17 +128,13 @@ for(int i = 0 ; i < n ; i++)
 {
     cin >> a[i];
     hsh[a[i]]++;  
-    
-
 }
-
 int q; cin >> q;
-while(q--){
+while(q--)
+{
     int x; cin >> x;
     cout << hsh[x] << endl;
-
 }
-
 
 // O(N) + O(Q) = O(N)
 // N & Q are of similar size(1e7)
@@ -155,6 +155,7 @@ Constraints
 1 <= Q <= 10^5
 1 < L, R <= N
 
+
 */
 
 
@@ -167,29 +168,28 @@ int a[N];
 // try to use 1-based array in prefix sum and L,R type problems.
 // no problem with L-- & R-- as L,R are given in 1-based itself
 
-
 int n ; cin >> n ; 
-for(int i = 1 ; i <= n ; i++){
+for(int i = 1 ; i <= n ; i++)
+{
     cin >> a[i];
     cout << a[i];
-
-
 }
 
 int q ; cin >> q;
-while(q--){
+while(q--)
+{
     int l,r;
     cin >> l >> r;
     long long sum = 0 ;
-    for(int i = l ; i<= r;i++){
+    for(int i = l ; i<=r;i++)
+    {
         sum += a[i];
     }
+
     cout << sum << endl;
-    
 }
 
 // O(N) + O(Q*N)= 10^10;
-
 
 
 /*
@@ -197,29 +197,30 @@ Prefix sum
 
 3 6 2 8 9 2 --> 3 9 11 19 28 30 
 
-the ith index will store the sum of all the elements  from 1 to ith index 
-
+the ith index will store the sum of all the elements  from 1st index  to ith index 
 
 */
 
-
 int pf[N];
 int n ; cin >> n ; 
-for(int i = 1 ; i <= n ; i++){
+for(int i = 1 ; i <= n ; i++)
+{
     cin >> a[i];
     pf[i] = pf[i-1] + a[i];
     // use 1-based indexing for prefix sum
 
 }
 
-
 int q ; cin >> q;
-while(q--){
+while(q--)
+{
     int l,r;
     cin >> l >> r;
     cout << pf[r] - pf[l-1] << endl;    
-}
+    // pf[r] gives the sum from 1 to r
+    // pf[l-1] gives the sum from 1 to l-1
 
+}
 
 //O(N) + O(Q) = 10^5  
 
@@ -237,12 +238,45 @@ and (c,d) as top bottom right point
 Constraints
 
 1 <= N <= 10^3
-1 < a[illjl <= 10^9
+1 < a[i][j] <= 10^9
 1 <= Q <= 10^5
 1 < a, b,c, d <= N
 
-
 */
+
+const int N = 1e3 + 10;
+int arr[N][N];
+//int main(){
+    int n ; cin >> n ; 
+    for(int i = 1 ; i <= n ;i++){
+        for(int j = 1 ; j <=n ; j++){
+            cin >> arr[i][j];
+        }
+    }
+    int q ; cin >> q ;
+    while(q--){
+        int a , b , c,d ;
+        cin >> a >> b >> c >> d;
+        long long sum = 0;
+        for(int i = a ; i <= c ;i++){
+            for(int j = b ; j <= d; j++ ){
+                sum += arr[i][j];
+            }
+        }
+        cout << sum << endl;
+    }
+//}
+
+// 2D array prefix sum
+
+ 
+
+
+
+
+
+
+
 
 
 
