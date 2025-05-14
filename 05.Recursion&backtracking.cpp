@@ -8,7 +8,8 @@
 
 // return statement inside a function will terminate the function then and there
 
-
+#include<bits/stdc++.h>
+using namespace std;
 /*
 
 Problems : 
@@ -88,6 +89,8 @@ f(n)
 }
 */
 /*
+
+
 Reverse an array(using 2 pointers)
 
 f(l,r)
@@ -101,11 +104,12 @@ main()
     int arr[n] , take input of arr
     f(0,n-1);
     cout << arr;
-
 }
 */
 
 /*
+
+
 Using single pointer 
 
 f(i)
@@ -118,13 +122,49 @@ main()
 {
     int arr[n] , take input of arr
     f(0)
-    cout << arr
+    cout << arr 
 
+}
+
+*/
+void reverse(int i , int arr[] , int n)
+{
+    if(i >= n/2) return;
+    swap(arr[i] , arr[n-i-1]);
+    reverse(i+1 , arr , n);
+
+}
+int main() 
+{   
+    int n ; cin >> n ;
+    int arr[n] ;
+    for(int i = 0 ; i < n ; i++) cin >> arr[i] ;
+    reverse(0,arr,n);
+    for(int i = 0 ; i < n; i++) cout << arr[i] << " " ; 
+    return 0 ;
+	
+}
+
+// palindrome
+
+bool palindrome(int i ,  string &s)
+{
+    if(i >= s.size() / 2) return true;
+    if(s[i] != s[s.size()-i-1]) return false;
+    return palindrome(i+1 , s);
+}
+int main()
+{
+    string s ; cin >> s ;
+    cout << palindrome(0,s);
+    return 0;
 }
 
 
 
-*/
+
+
+
 
 
 
