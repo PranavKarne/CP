@@ -161,6 +161,83 @@ int main()
 }
 
 
+// Multiple Recursion Calls - function is called multiple times
+
+//fibonacci
+
+// for harder problems we will use recursive trees
+
+// tc - O(2^N) (approx) - exponential in nature - for fibonacci
+
+
+/*
+
+Print all Subsequences 
+
+subsequences - a contiguous/non-contiguos sequence which follows the order 
+[3,1,2] -> [1,2] , [3,1] , [3,2] , []  are subsequences , they shld follow order of array but 3,2,1 is not subsequences
+subarray - just contiguous 
+
+take and not take
+for every index we have 2 options , to take or to not take
+
+Ex:
+[3,1,2]
+
+[3,2] - take , not take , take 
+[1,2] - not take , take , take
+[3,1]- take , take , not take 
+[] - not take , not take , not take 
+
+this structure/pattern is very important , used everywhere
+
+arr - [3,1,2] (0,1,2 indexes)
+
+f(index , [] )
+{
+    if(index >= n )
+    {   
+        print(arr)
+        return ;
+    }
+    arr.add(arr[i]);
+    f(index + 1 , []) ;  (take)
+
+    arr.remove(arr[i]) ;
+    f(index+1 , [])     (not take)
+    
+
+}
+int main()
+{   
+    arr - [3,1,2]
+    f(0,[]);
+}
+
+
+
+
+*/ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
