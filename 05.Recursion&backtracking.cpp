@@ -200,6 +200,8 @@ f(index , [] )
         print(arr)
         return ;
     }
+
+    
     arr.add(arr[i]);
     f(index + 1 , []) ;  (take)
 

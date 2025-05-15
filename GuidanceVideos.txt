@@ -1,0 +1,105 @@
+1.CP templates and snippets
+
+
+Slides : https://drive.google.com/file/d/11NloNRjaFUo7P6Gk6wbI5Ol5n3SfMfTD/view
+
+https://usaco.guide/general/fast-io?lang=cpp -> refer this for fast I/O
+
+Learn How Everything works in My template
+
+Figure out tht MOD,FFT,NTT thing in my template
+
+
+
+2.How to Improve Implemenetation 
+
+
+Writing Clean Code is imp from the beginning itself
+
+Quality of Implemenetation directly shows how your flow of thinking is 
+
+Come up with the entire Solution and then start coding 
+
+(here we think of edge cases too , we can code out the Solution and think of it much faster compared to
+when u just come up with the idea and implement it as it is)
+
+the idea is u come with the entire Solution first where your sure tht this particular Solution will get implemented
+and then u start coding it 
+
+we have to improve our standard techniques
+
+Solve CSES - Intro Problems & Searching and Sorting
+and go through this book - https://cses.fi/book/book.pdf
+
+
+
+keep a pen and paper alongside , dont solve in your head
+when u think of 2-3 observations for a problem , it might be tht these observations are interlinked to form a Solution
+during practice , write down your thoughts
+some observations might be useless , so u strike it out and we ll not think abt it
+
+
+
+COMMON BLUNDER  :  for beginners , they are stuck in a though loop , they come up with an observation1 
+then later they realise tht this is not a Solution then they go to observation2 and they again realise tht it doesnt work
+and they again go back to tht  observation1 and stuck in this loop again and again , so have a pen and paper always
+
+
+During practice, once you have implemented your accepted
+verdict, look at the code of people who write clean code and see
+how they have implemented the same thing and learn new things 
+
+read text editorial on CF , try to understand wht the editorial is trying to say after trying out the problem , these editorials
+are written very mathematically , so in longer run , your thought process get streamlined.
+
+Learn About 3D Vector(C++20)
+
+Learn About Lambda Functions 
+
+--> to Become an Expert at cf u need to solve 1700 rated problems in around 30-40 mins
+solve cses - Searching&Sorting , graphs , dp and binary search on answer(cf) 
+
+--> for becoming Expert to CM , u need to be good at Range Queries , Mathematics , DP , Graphs -> u need to know them really good
+
+
+to crack an intern , u need  
+- a good resume
+- 2 good/unique  resumes
+- dsa
+- a star factor - high rating in cf&cc  , hackathon , experience
+
+
+>=1700 Rating Skill --> many/most OAs 
+>=1900 Rating Skill --> almost all OAs
+depends on company to company , in general 
+
+
+in CP , the idea is not to memorise solutions , u can memorise techniques but the idea is to get strong to think and 
+come up with solutions , develop a habit of reasoning yourself , solve with 1st principles , if u look at 1st principle
+solving u will really do well , it is a way to reason , for Everything u ask y is it so? then u get a reason , then
+again u ask y is it so? u try to break it down into molecular level and try to get it in your brain , u shld question like 
+y is it working like tht , y cant it work the other way , learn to ask questions and try to reason yourself , 
+improve your reasoning skills 
+
+wht is 1st principles - it is like thinking from very basic levels.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
