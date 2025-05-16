@@ -19,7 +19,17 @@ cout << fixed << setprecision(15) << d ;
 
 output :  1000000000.000000000000000
 
-3.
+3. to prevent segmentation fault , always declare the size of vectors
+
+        vector<int>v(n-1);
+        vector<int>v(n);
+
+4.Sum of 1st "n" natural numbers from 0 to n-1 is (n * (n-1)) / 2
+
+
+
+
+
 
 
 

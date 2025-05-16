@@ -189,24 +189,23 @@ Ex:
 [3,1]- take , take , not take 
 [] - not take , not take , not take 
 
-this structure/pattern is very important , used everywhere
+this structure/pattern is very important , used everywhere , remember it forever : 
 
-arr - [3,1,2] (0,1,2 indexes)
+arr - [3,1,2] (0,1,2 -  indexes)
 
-f(index , [] )
+f(index,[])
 {
     if(index >= n )
     {   
         print(arr)
-        return ;
+        return;
     }
 
-    
     arr.add(arr[i]);
-    f(index + 1 , []) ;  (take)
+    f(index + 1,[]) ;  (take)
 
     arr.remove(arr[i]) ;
-    f(index+1 , [])     (not take)
+    f(index+1 ,[])     (not take)
     
 
 }
@@ -214,12 +213,146 @@ int main()
 {   
     arr - [3,1,2]
     f(0,[]);
+
+}
+
+*/
+
+void subsequences(int index , vector<int>&v , int arr[] , int n)
+{
+    if(index == n)
+    {   
+        for(auto &it : v) cout << it << " ";
+        cout << endl;
+        return;
+    }
+    
+    v.push_back(arr[index]);
+    subsequences(index+1,v,arr,n);
+
+    v.pop_back();
+    subsequences(index+1,v,arr,n);
+}
+int main()
+{
+    int arr[3] = {3,1,2};
+    int n = 3 ; 
+    vector<int>v;
+    subsequences(0,v,arr,n);
+    return 0;
+
+    // TC - O(2^N * N) 
+    // SC - O(N)
+
 }
 
 
+// Printing Subsequences whose Sum is K
 
 
-*/ 
+void subsequences(int index , vector<int>&v , int arr[] , int n , int k , int sum)
+{
+    if(index == n)
+    {  
+        if(sum == k)
+        {
+            for(auto &it : v) cout << it << " ";
+            cout << endl;
+            
+        }
+        return;
+    }
+
+    v.push_back(arr[index]);
+    sum += arr[index];
+    subsequences(index+1,v,arr,n,k,sum);
+    v.pop_back();
+    sum -= arr[index];
+    subsequences(index+1,v,arr,n,k,sum);
+
+}
+int main()
+{
+    int arr[3] = {1,2,1};
+    int n = 3 ; 
+    int k = 2 ;
+    int sum = 0;
+    vector<int>v;
+    subsequences(0,v,arr,n,k,0);
+    return 0;
+
+    
+
+}
+
+// Print Only 1 Subsequence whose Sum is K
+
+// Method 1 : Not Recommended Actually , here we use global Variables
+
+// When a subsequence with sum equal to k is found, the condition if (sum == k && flag == false) becomes true. 
+// So, the code prints this first matching subsequence and sets flag = true.
+// After the first match, flag becomes true, so all future matches are ignored
+// even if their sum equals k, because flag == false is now false.
+
+
+
+bool flag = false;
+void subsequences(int index , vector<int>&v , int arr[] , int n , int k , int sum)
+{
+    if(index == n)
+    {  
+        if(sum == k && flag == false)
+        {   
+            flag = true;
+            for(auto &it : v) cout << it << " ";
+            cout << endl;
+        }
+        return;
+    }
+
+    v.push_back(arr[index]);
+    sum += arr[index];
+    subsequences(index+1,v,arr,n,k,sum);
+    v.pop_back();
+    sum -= arr[index];
+    subsequences(index+1,v,arr,n,k,sum);
+
+}
+int main()
+{
+    int arr[3] = {1,2,1};
+    int n = 3 ; 
+    int k = 2 ;
+    int sum = 0;
+    vector<int>v;
+    subsequences(0,v,arr,n,k,0);
+    return 0;
+
+    
+
+}
+
+// this above method will work but it is not preferred 
+
+// Method 2 : the functional Method
+
+
+// the technique to print only answer ->  in the function , in the base condition 
+// if the condition is satisfied , we shld return a true , if the condition is not satisfied then return a false 
+// now in the function call , will be inside if() like -->  " if(fxn()== true) return ; " there is no need to go beyond 
+
+// 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
