@@ -24,7 +24,54 @@ output :  1000000000.000000000000000
         vector<int>v(n-1);
         vector<int>v(n);
 
-4.Sum of 1st "n" natural numbers from 0 to n-1 is (n * (n-1)) / 2
+4. Sum of 1st "n" natural numbers from 0 to n-1 is (n * (n-1)) / 2
+
+5. sorting in a string
+
+    string s = "monkey";
+    sort(s.begin(), s.end());
+    cout << s ; --> ekmnoy
+
+    string s = "pranavkarne";
+    sort(s.begin(), s.end());
+    cout << s ;  --> aaaeknnprrv
+
+6. An ordinary array can be sorted as follows:
+
+    int n = 7; 
+    int a[] = {4,2,5,3,5,8,3};
+    sort(a,a+n);
+    for(auto it : a) cout << it << " " ;  --> 2 3 3 4 5 5 8 
+
+7. Vector sorting
+
+vector<int> v = {4,2,5,3,5,8,3};
+sort(v.begin(),v.end());  -> increasing order sorting
+for(auto it : v) cout << it << " " ; --> 2 3 3 4 5 5 8 
+
+8.  vector<int> v = {4,2,5,3,5,8,3};
+    sort(v.rbegin(),v.rend());  --> decreasing order  sorting
+    for(auto it : v) cout << it << " " ; --> 8 5 5 4 3 3 2 
+
+
+9. to prevent overflow (-ve numbers come) of integer values use long long int , even for vectors or for normal int
+
+int n = 45;
+long long int ;
+vector<long long >v;
+
+10. when string length 1 
+
+use (int)s.length() - 1 ;
+
+
+
+
+
+
+
+
+
 
 
 

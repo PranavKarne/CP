@@ -162,22 +162,146 @@ st2.swap(st);
     // lower bound and upper bound function does not work 
     // all operations are similar to set 
 
+
+
     // 8.Map 
 
     map<int,int>mpp;
-//     (key,value)
-    mpp[1] = 2; // ->{1,2}
+//     (key,value) 
+    mpp[1] = 2; // ->{1,2} -> {key , value} 
 
     mpp.insert({4,5}); // key,value
+
+    mpp[5] = 50;
+    mpp[10] = 100;
+
+    for (auto it : mpp)
+    {
+        cout << "Key: " << it.first << " -> Value: " << it.second << "\n";
+    }
+
+    // to find 
+    for (auto it : mpp)
+    {
+        if (it.first == 1)
+    {
+        cout << it.first << " " << it.second << endl;
+    }
+} 
 
     // map stores keys(unique) in sorted order 
     
     // (key,value) -> keys are unique , values can be duplicate , key can be any datatype
 
     // do research on map + pair mixing , learn how to use it 
-    
+
+    // erase , swap , size are same as above 
+
+
+
+     
+
     map<int,pair<int,int>>mpp1;
-    map<pair<int,int>,int>mpp2;
+    
+    //  --> key is int  & value is 2 integers 
+
+    mpp1[1] = {10, 20};
+    mpp1[2] = {30, 40};
+    //  [key] = {values};
+
+    for (auto it : mpp1)
+    {
+        cout << "Key: " << it.first << " -> Value: (" << it.second.first << ", " << it.second.second << ")\n";
+    }
+
+    
+
+    map<pair<int,int>,int>mpp2; // --> key is 2 integers & value is 1 integer
+    mpp2[{2,4}] = 100;
+    mpp2[{1, 2}] = 100;
+    mpp2[{3, 4}] = 200;
+//    [{keys pair}] = value ;
+
+
+// 9. MultiMap -> similar to map but only difference is tht it can store multiple keys(duplicate keys)
+//  but everything  in sorted order
+
+
+
+// 10. unordered map --> will have unique keys , not in sorted order
+
+
+// maps are O(log n) 
+// unordered map is O(1) in all cases ,very rarely O(N) once in a bluemoon
+
+
+//sorting
+
+int n ;
+int a[n];
+sort(a,a+n); // [start , end)
+
+vector<int>v;
+sort(v.begin() , v.end());
+
+// to sort a particular portion of the vector(ascending)
+
+    vector<int>v1 = {4,9,6,4,1,4,2};
+    sort(v1.begin()+2,v1.begin()+4); // -> here it [start,end)
+    for(auto it : v1) cout << it << " ";
+
+// to sort in descending order 
+
+    vector<int> v = {4,2,5,3,5,8,3};
+    sort(v.rbegin(),v.rend());   // --> decreasing order  sorting
+    for(auto it : v) cout << it << " " ; // --> 8 5 5 4 3 3 2 
+
+// to sort in my own way or 
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
 
      
 
@@ -194,17 +318,6 @@ st2.swap(st);
 
 
 
-
-
-
-
-
-
-
-
-
-
-    
 
 
 
