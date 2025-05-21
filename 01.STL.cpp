@@ -255,8 +255,83 @@ sort(v.begin() , v.end());
     vector<int> v = {4,2,5,3,5,8,3};
     sort(v.rbegin(),v.rend());   // --> decreasing order  sorting
     for(auto it : v) cout << it << " " ; // --> 8 5 5 4 3 3 2 
+    // or
 
-// to sort in my own way or 
+    // sort(v,v+n,greater<int>);
+
+
+// to sort in my own way (this will be used alot in future)
+
+/*
+
+bool comp(pair<int,int>p1 , pair<int,int>p2) 
+{
+    // we assume tht the p1 lies before p2
+
+    if(p1.second < p2.second) return true;
+    if(p1.second > p2.second) return false;
+
+    // if they are same 
+    if(p1.first > p2.first) return true;
+    else return false;
+
+
+}
+
+*/
+
+// sort it acc to second element and if second element is same then sort it 
+// according to 1st element but in descending 
+
+pair<int,int>a[] = {{1,2},{2,1},{4,1}};
+
+ 
+
+// sort(a,a+n,comp);
+// comp  --> it is a self return comparator and it is a bool function
+
+// {4,1} , {2,1} , {1,2}
+
+    int num = 7;
+    int set_bits = __builtin_popcount(num); // --> in its binary form it gives the number of set bits
+    cout << set_bits ;
+
+// for a larger number (long long)
+
+    long long  num1 = 90886848348924923;
+    int set_bits1 = __builtin_popcountll(num1);
+    cout << set_bits1 << endl;
+
+
+// how to print permutations of a string
+
+string s = "pranavkarne";
+sort(s.begin() , s.end());
+
+do
+{   
+    cout << s << '\n';
+}
+while (next_permutation(s.begin(),s.end()));
+
+
+// how to find the max element / min element in an array or vector
+
+    vector<int>v = {4,5,6,23,23,242,4};
+    int max_elemen = *max_element(v.begin() , v.end());
+    int min_elemen = *min_element(v.begin() , v.end());
+
+    cout << max_elemen << '\n' ;
+    cout << min_elemen << '\n' ;
+
+
+
+
+
+
+
+
+
 
 
 
