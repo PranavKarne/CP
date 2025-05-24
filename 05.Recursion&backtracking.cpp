@@ -391,6 +391,58 @@ int main()
 }
 
 
+// Count the Subsequences whose sum is K
+
+
+int subsequences2(int index ,  int arr[] , int n , int k , int sum)
+{
+    if(index == n)
+    {  
+        if(sum == k)
+        {
+            return 1;
+        }
+        // condition is not satisfied 
+        else return 0;
+    }
+
+  
+    sum += arr[index];
+
+    int l = subsequences2(index+1,arr,n,k,sum);
+    
+
+    sum -= arr[index];
+
+    int r = subsequences2(index+1,arr,n,k,sum);
+     
+
+    return l + r;
+    
+
+}
+int main()
+
+{
+    int arr[4] = {1,2,1};
+    int n = 3 ; 
+    int k = 2 ; 
+    int sum = 0;
+    vector<int>v;
+    cout << subsequences2(0,arr,n,k,0) << " " ;
+    return 0;
+
+}
+
+
+// TC = O(2^ N) 
+
+
+// remember the above pattern forever , it is very important
+
+// tip = for problems asking count , use return 1 , return 0 and add all the f()'s and return
+
+
 
 
 
