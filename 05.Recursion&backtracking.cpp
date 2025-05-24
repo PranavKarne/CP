@@ -174,9 +174,12 @@ int main()
 
 Print all Subsequences 
 
+
 subsequences - a contiguous/non-contiguos sequence which follows the order 
-[3,1,2] -> [1,2] , [3,1] , [3,2] , []  are subsequences , they shld follow order of array but 3,2,1 is not subsequences
-subarray - just contiguous 
+[3,1,2] -> [1,2] , [3,1] , [3,2] , []  are subsequences , they shld follow order of array 
+but 3,2,1 is not subsequences
+
+subarray - just contiguous , a subarray can be a subsequence
 
 take and not take
 for every index we have 2 options , to take or to not take
@@ -191,10 +194,15 @@ Ex:
 
 this structure/pattern is very important , used everywhere , remember it forever : 
 
+
 arr - [3,1,2] (0,1,2 -  indexes)
+
+
 
 f(index,[])
 {
+
+
     if(index >= n )
     {   
         print(arr)
@@ -206,6 +214,9 @@ f(index,[])
 
     arr.remove(arr[i]) ;
     f(index+1 ,[])     (not take)
+
+
+
     
 
 }
