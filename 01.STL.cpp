@@ -1,13 +1,31 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+/*
+STL 
 
+1.Pairs 
+2.Vectors
+3.Lists
+4.Stacks
+5.Queue
+6.Priority Queue 
+7.Set
+8.Multiset
+9.Unordered Set
+10.Map 
+11.multimap
+12.unordered map 
+
+
+*/
 int main()
 {   
     //1. Pairs
 
     pair<int , int > p = {1,5};
     // p.F -> 1 , p.S -> 5
+
 
     // to store 3 elements
 
@@ -48,9 +66,26 @@ int main() {
 */
 
 
+// how to print the complete pair or pair of vectors
 
+/*
 
+void printVectorOfPairs(vector<pair<int,int>> &vec) 
+{
+    for(auto p : vec)
+    {
+        cout << "(" << p.first << ", " << p.second << ") ";
+    }
+}
 
+int main()
+{
+    vector<pair<int, int>> arr = {{1,2},{1,4},{5,6}};
+    printVectorOfPairs(arr);
+    return 0;
+}
+
+*/
 
 
     
@@ -58,8 +93,7 @@ int main() {
 
 // 2.Vectors - dynamic in nature
  
-vector<int> v;
-v.push_back(1);
+
 
 
 vector<pair<int,int>>vec;
