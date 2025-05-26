@@ -434,13 +434,12 @@ int main()
 
 }
 
-
 // TC = O(2^ N) 
-
 
 // remember the above pattern forever , it is very important
 
 // tip = for problems asking count , use return 1 , return 0 and add all the f()'s and return
+
 
 
 
