@@ -32,7 +32,6 @@ Solve CSES - Intro Problems & Searching and Sorting
 and go through this book - https://cses.fi/book/book.pdf
 
 
-
 keep a pen and paper alongside , dont solve in your head
 when u think of 2-3 observations for a problem , it might be tht these observations are interlinked to form a Solution
 during practice , write down your thoughts
@@ -40,7 +39,7 @@ some observations might be useless , so u strike it out and we ll not think abt 
 
 
 
-COMMON BLUNDER  :  for beginners , they are stuck in a though loop , they come up with an observation1 
+COMMON BLUNDER  :  for beginners , they are stuck in a thougth loop , they come up with an observation1 
 then later they realise tht this is not a Solution then they go to observation2 and they again realise tht it doesnt work
 and they again go back to tht  observation1 and stuck in this loop again and again , so have a pen and paper always
 

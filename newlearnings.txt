@@ -128,6 +128,16 @@ int main() {
 
 
 
+17. PnC  
+
+nCr = n!/(r! * (n-r)!)
+
+nCr == nCn-r
+
+for recursion : ncr(N-1 , R) + ncr(N-1,R-1);
+
+
+18. 
 
 
 

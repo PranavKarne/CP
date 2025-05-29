@@ -254,9 +254,7 @@ int main()
 
 }
 
-
 // Printing Subsequences whose Sum is K
-
 
 void subsequences(int index , vector<int>&v , int arr[] , int n , int k , int sum)
 {
@@ -276,6 +274,8 @@ void subsequences(int index , vector<int>&v , int arr[] , int n , int k , int su
     v.pop_back();
     sum -= arr[index];
     subsequences(index+1,v,arr,n,k,sum);
+
+
 
 }
 int main()
