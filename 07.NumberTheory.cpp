@@ -1,10 +1,13 @@
 /*
+
 Modular Arithmetic
 
 M = 1e9 + 7
 
-Significance of 1e9 + 7 =  very close to int max value 
-In Multiplicative inverse cannot be calculated for all numbers , 1e9 + 7 is prime number actually so  multiplicative inverse can be calculated easily.
+Significance of 1e9 + 7 
+
+--> very close to int max value 
+--> In Multiplicative inverse cannot be calculated for all numbers , 1e9 + 7 is prime number actually so  multiplicative inverse can be calculated easily.
 
 In A % M , the result of this operation is always lesser than M 
 
@@ -13,9 +16,13 @@ In A % M , the result of this operation is always lesser than M
 (a-b) % M = ((a % M) - (b % M) + M) % M 
 (a/b) % M = ((a % M) * (b^-1 % M)) % M
 
+
+b^-1 = b inverse
+
 --> In the above equation, we add M to ensure that the result is non-negative. 
 This is important because the modulo operation can yield negative results in some programming languages when the dividend is negative.
 By adding M, we ensure that the result falls within the range of 0 to M-1.
+
 
 */
 
@@ -37,9 +44,6 @@ int main()
      // when we take input as 21 , it gives -ve output , it overflows , long long also cannot store fact of 21.
      // in qs when answer is very very  big , we use modulo 
 
-
-
-
 /*
 Problem : 
 Given a number N. Print its factorial.
@@ -56,11 +60,25 @@ int n; cin >> n ;
     for(int i = 2 ; i <=n ;i++){
         fact = (fact * i) % M;
     }
-
+ 
     cout << fact << endl;
 }
 
 
+// In A % M , the result of this operation is always lesser than M 
+
+/*
+
+Binary Numbers - contains 0's and 1's 
+
+converting binary to decimal
+
+101 = 1 * 2^2  + 0 * 2^1 +  1 * 2^0 = 5
+
+for even numbers we have 0 in the ending in binary form
+for odd numbers we have 1 in the ending in binary form
+
+*/
 
 /*
 
@@ -69,7 +87,7 @@ GCD = greatest common divisor (hcf) , maximum divisor value for 2 numbers
 4,12 --> 4
 12,18 --> 6
 
-gcd and lcm calculation in school
+gcd and lcm calculation in school method 
 
 4 - 2^2 * 3^0
 12 - 2^2 * 3^1
@@ -77,6 +95,7 @@ gcd and lcm calculation in school
 extract the minimum of the powers for gcd -> 2^2 * 3^0 -> 4
 
 LCM of 4 , 12 : 
+
 we extract the maximum of the powers for lcm 
 2^2 * 3^1  -> 12 
 
@@ -86,8 +105,9 @@ GCD of 12,18
 12 - 2^2 * 3
 18 - 2 * 3^2
 
-GCD -> 2 * 3 -> 6
-LCM -> 2^2 * 3^2 -> 36
+GCD -> 2 * 3 -> 6 (extract the minimum powers)
+LCM -> 2^2 * 3^2 -> 36 (extract the maximum powers)
+
 
 relationship b/w gcd and lcm
 
@@ -95,6 +115,8 @@ LCM(a,b) = a*b / GCD(a,b)
 
 Euclid's Algorithm :
 (long division method)
+
+
 */
 
 int gcd(int a , int b){
