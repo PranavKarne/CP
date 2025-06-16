@@ -126,15 +126,22 @@ int main() {
     return 0;
 }
 
-
-
 17. PnC  
 
 nCr = n!/(r! * (n-r)!)
 
 nCr == nCn-r
 
-for recursion : ncr(N-1 , R) + ncr(N-1,R-1);
+for recursion use this :
+C(n,r)=C(n−1,r−1)+C(n−1,r)
+
+int combination(int N , int R)
+{
+    if(N==R || R==0) return 1;
+    if(N<R) return 0;
+    return combination(N-1,R) + combination(N-1,R-1);
+
+}
 
 
 18. sum of an array using recursion
