@@ -1,4 +1,4 @@
-1.CP templates and snippets
+1. CP templates and snippets
 
 
 Slides : https://drive.google.com/file/d/11NloNRjaFUo7P6Gk6wbI5Ol5n3SfMfTD/view
@@ -11,7 +11,7 @@ Figure out tht MOD,FFT,NTT thing in my template
 
 
 
-2.How to Improve Implemenetation 
+2. How to Improve Implemenetation 
 
 
 Writing Clean Code is imp from the beginning itself
