@@ -143,9 +143,7 @@ int combination(int N , int R)
 
 }
 
-
 18. sum of an array using recursion
-
 
 int sum_total(int sum , int arr[] , int n , int i )
 {    
@@ -172,8 +170,21 @@ n * (n+1)/2 when n is big
 
 Any value that might go beyond 2^31
 
+20. Resize the vector before accessing indices
 
+vector<int> home(n + 1);
+for (int i = 0; i <= n; i++) {
+    cin >> home[i];
+}
 
+OR do this 
+
+vector<int> home;
+for (int i = 0; i <= n; i++) {
+    int x;
+    cin >> x;
+    home.push_back(x);
+}
 
 
 

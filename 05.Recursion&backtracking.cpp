@@ -438,13 +438,22 @@ int main()
 
 // remember the above pattern forever , it is very important
 
-// tip = for problems asking count , use return 1 , return 0 and add all the f()'s and return
 
 
+// tip = for problems asking count 
+// use return 1 , return 0 and add all the f()'s and return
 
-
-
-
+int ways(int S, int E)
+{
+    if (S == E) return 1;       
+    if (S > E) return 0;        
+    return ways(S + 1, E) + ways(S + 2, E) + ways(S + 3, E);
+}
+int main() {
+    int S, E;
+    cin >> S >> E;
+    cout << ways(S, E) << endl;
+}
 
 
 
