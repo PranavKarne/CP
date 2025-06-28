@@ -150,19 +150,48 @@ for -ve numbers , the leftmost bit is "1"
 for -ve number operations remember to convert -ve number to its 2 compliment
 computer always stores its 2 compliment
 
+*/
 
+/* Swap 2 numbers using XOR
 
+XOR - count of 1's is odd = 1 
+    - count of 1's is even = 0
 
+*/
 
+int a , b ;
 
+int a = a ^ b ;
+int b = a ^ b ;
+int a = a ^ b ;
 
+/* 
+check if ith bit is set or not
 
+(0 based indexing)
 
+N = 13 -> 1 1 0 1 in binary
+i = 2
 
+1 << 2 = 1 0 0 
 
+1 << 1 = 1 0 
 
+using the left shift operator 
 
+if((n & (1<<i))!= 0) 
 
+using right shift operator
+
+if(((n>>i)&1)!= 0) 
+
+tc = O(1)
+
+*/
+
+/*  
+
+set the ith bit 
 
 
 */

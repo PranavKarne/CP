@@ -186,6 +186,35 @@ for (int i = 0; i <= n; i++) {
     home.push_back(x);
 }
 
+21. auto — Use when you're just reading/printing values, not modifying them.
+
+vector<int> v = {1, 2, 3};
+for (auto x : v)
+{
+    cout << x << " ";  // ✅ Safe: just printing
+}
+
+22. auto& — Use when you want to modify the elements of the vector.
+
+vector<int> v = {1, 2, 3};
+
+for (auto& x : v) {
+    x += 10;           // ✅ Modifies the actual vector
+}
+
+for (auto x : v) {
+    cout << x << " ";  // Output: 11 12 13
+}
+
+23. Common Mistake: Using auto when you want to read input
+
+vector<int> v(3);
+
+// ❌ This won't work as expected:
+for (auto x : v) cin >> x;  // x is a copy → doesn't change v
+
+// ✅ Correct:
+for (auto& x : v) cin >> x;
 
 
 
