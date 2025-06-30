@@ -239,6 +239,8 @@ Possible subarrays:
 
 ❌ Not subarrays: [1, 3] (because 2 is skipped)
 
+A Subarray can be a subsequence
+
 
 2. Subsequence 
 
@@ -262,7 +264,6 @@ Possible subsequences:
 
 
 3.Subset 
-
 
 A subset is any combination of elements from the set (order and position don't matter).
 

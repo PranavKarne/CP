@@ -205,13 +205,14 @@ f(index,[])
     {   
         print(arr)
         return;
+
     }
 
     arr.add(arr[i]);
-    f(index + 1,[]) ;       (take)
+    f(index+1 , []);       (take)
 
-    arr.remove(arr[i]) ;
-    f(index+1 ,[])          (not take)
+    arr.remove(arr[i]);
+    f(index+1 , [])          (not take)
 
 }
 int main()
@@ -266,6 +267,7 @@ void subsequences(int index , vector<int>&v , int arr[] , int n , int k , int su
             cout << endl;
         }
         return;
+
     }
  
     v.push_back(arr[index]);
@@ -290,7 +292,7 @@ int main()
 }
 
 
-//Print Only 1 Subsequence whose Sum is K
+//  Print Only 1 Subsequence whose Sum is K
 
 // Method 1 : Not Recommended Actually , here we use global Variables
 
@@ -323,6 +325,7 @@ void subsequences(int index , vector<int>&v , int arr[] , int n , int k , int su
     subsequences(index+1,v,arr,n,k,sum);
 
 }
+
 int main()
 {
     int arr[3] = {1,2,1};
@@ -332,9 +335,7 @@ int main()
     vector<int>v;
     subsequences(0,v,arr,n,k,0);
     return 0;
-
-    
-
+ 
 }
 
 // this above method will work but it is not preferred 
