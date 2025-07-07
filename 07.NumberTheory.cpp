@@ -133,14 +133,13 @@ int gcd(int a , int b){
 
 }
 
-int main(){
+int main()
+{
 
     cout << gcd(12,18) << endl;
     cout << gcd(18,12) << endl;
     //doesnt matter if the bigger number if 1st or not , as in long division method
     //the reminder(a%b)(non-zero) becomes the divisor and the divisor(previous)(b) becomes the dividend 
-
-
     //in-built fxn 
     cout << __gcd(20,10) << endl;
 

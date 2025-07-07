@@ -285,8 +285,19 @@ Same as subsequences if you ignore order.
 
 
 
+25. how to find in wht complexity we have to solve the problem ? or wht is the maximum time 
+complexity allowed 
 
+generally , 
+    1 sec means 10^8 operations
+    2 sec means 2 * 10^8 operations
 
+in problem statment it is given like "time limit per test - 2 seconds " and 1≤ T ≤ 10^3
+
+that means the operations allowed  per test case will be 2 * 10^8 / 10^3 = 2 * 10^5 , tht means 
+we have to solve under this TC only , in problem statment it is given like 1≤ N ≤ 10^18 
+N is very large , it is 10^18 , O(N) is definetly not possible here , O(log n) and O(1) 
+can work here , and anything under O(10^15) will work 
 
 
 
