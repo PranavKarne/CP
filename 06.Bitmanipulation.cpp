@@ -16,10 +16,10 @@ using namespace std;
 
 
 // this function will convert decimal to binary 
-string dec2bin(int x , int n)
+string dec2bin(int n)
 {
     string res = " ";
-    while(n!=1)
+    while(n!=0)
     {
         if(n%2==1) res += "1";
         else res += "0";
@@ -33,19 +33,21 @@ string dec2bin(int x , int n)
 
 
 // this function will convert binary to decimal
+
 int bin2dec(string x)
 {
     int len = x.length();
     int pow2 = 1;
-    int num;
-    for(int i = len - 1 ; i > 0 ; i--)
+    int num = 0;
+    for(int i = len - 1 ; i >= 0 ; i--)
     {
-        if(x[i] = '1')
+        if(x[i] == '1')
         {   
             num = num + pow2;
         }
         pow2 = pow2 * 2;
     }
+
     return num;
 }
 
@@ -147,16 +149,20 @@ NOT operator(~)
 it stores 2's compliment or else it stops
 
 for -ve numbers , the leftmost bit is "1"
-for -ve number operations remember to convert -ve number to its 2 compliment
+for -ve number operations always remember to convert -ve number to its 2 compliment 
 computer always stores its 2 compliment
+
 
 */
 
-/* Swap 2 numbers using XOR
+/* 
+
+Swap 2 numbers using XOR
 
 XOR - count of 1's is odd = 1 
     - count of 1's is even = 0
 
+    
 */
 
 int a , b ;
