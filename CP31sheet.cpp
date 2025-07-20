@@ -1,7 +1,9 @@
 /*
-800 Rated 
+900 Rated 
 
-1.
+26. Odd Divisor = https://codeforces.com/problemset/problem/1475/A
+
+
 
 
 */

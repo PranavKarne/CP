@@ -60,7 +60,7 @@ int n = 45;
 long long int ;
 vector<long long >v;
 
-10.when string length is  1 in the problem statment
+10.when string length is  1 in the problem statement
 
 use (int)s.length() - 1 ;
 
@@ -73,7 +73,6 @@ else all the permutations wont be printed
 
 string s = "pranavkarne";
 sort(s.begin() , s.end());
-
 do
 {   
     cout << s << '\n';
@@ -86,6 +85,7 @@ while (next_permutation(s.begin(),s.end()));
     vector<int>v = {4,5,6,23,23,242,4};
     int max_elemen = *max_element(v.begin() , v.end());
     cout << max_elemen << '\n' ;
+
 
 14. Input for 2D Array 
 
@@ -299,6 +299,16 @@ we have to solve under this TC only , in problem statment it is given like 1≤ 
 N is very large , it is 10^18 , O(N) is definetly not possible here , O(log n) and O(1) 
 can work here , and anything under O(10^15) will work.
 
+26. Extract digits of a number 
+
+
+int n = 12345;
+
+while(n > 0) {
+    int digit = n % 10;    // Extract last digit
+    cout << digit << " ";  // Output or store it
+    n = n / 10;            // Remove the last digit
+}
 
 
 
