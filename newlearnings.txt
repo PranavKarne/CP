@@ -311,4 +311,21 @@ while(n > 0) {
 }
 
 
+27. Reading N values when N is given at runtime
 
+int main() {
+    int n;
+    cin >> n; // input size known only at runtime
+    vector<int> v;
+    int x;
+    while (n--) {
+        cin >> x;
+        v.push_back(x);
+    }
+
+    for (int val : v) {
+        cout << val << " ";
+    }
+}
+
+ Use Case: When user gives size first, then inputs follow.
