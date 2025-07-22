@@ -3,6 +3,7 @@ using namespace std;
 
 const int M =  1e9 + 7 ;
 
+
 /*
 
 Precomputation in Competitive Programming (CP) refers to calculating and storing results before

@@ -323,7 +323,8 @@ int main() {
         v.push_back(x);
     }
 
-    for (int val : v) {
+    for (int val : v) 
+    {
         cout << val << " ";
     }
 }

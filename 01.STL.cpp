@@ -11,7 +11,7 @@ STL
 3.Lists
 4.Stacks
 5.Queue
-6. Priority Queue 
+6.Priority Queue 
 7.Set
 8.Multiset
 9.Unordered Set
@@ -23,6 +23,7 @@ STL
 */
 int main()
 {   
+
     //1. Pairs
 
     pair<int , int > p = {1,5};
@@ -195,7 +196,7 @@ st2.swap(st);
 
     unordered_set<int>unst;
 
-    //TC - O(1) 
+    // TC - O(1) 
     // lower bound and upper bound function does not work 
     // all operations are similar to set 
 
@@ -260,7 +261,7 @@ st2.swap(st);
 //    [{keys pair}] = value ;
 
 
-// 9. MultiMap -> similar to map but only difference is tht it can store multiple keys(duplicate keys)
+// 9.MultiMap -> similar to map but only difference is tht it can store multiple keys(duplicate keys)
 //  but everything  in sorted order
 
 
@@ -272,7 +273,7 @@ st2.swap(st);
 // unordered map is O(1) in all cases ,very rarely O(N) once in a bluemoon
 
 
-//sorting
+// sorting
 
 int n ;
 int a[n];
@@ -352,9 +353,9 @@ do
 while (next_permutation(s.begin(),s.end()));
 
 
-// how to find the max element / min element in an array or vector
+//  how to find the max element / min element in an array or vector
 
-    vector<int>v = {4,5,6,23,23,242,4};
+    vector<int>v =  {4,5,6,23,23,242,4};
     int max_elemen = *max_element(v.begin() , v.end());
     int min_elemen = *min_element(v.begin() , v.end());
 
