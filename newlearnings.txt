@@ -330,3 +330,7 @@ int main() {
 }
 
  Use Case: When user gives size first, then inputs follow.
+
+
+28. substrings 
+
