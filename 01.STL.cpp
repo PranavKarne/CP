@@ -262,7 +262,7 @@ st2.swap(st);
 //    [{keys pair}] = value ;
 
 
-// 9.MultiMap -> similar to map but only difference is tht it can store multiple keys(duplicate keys)
+// 9. MultiMap -> similar to map but only difference is tht it can store multiple keys(duplicate keys)
 //  but everything  in sorted order
 
 

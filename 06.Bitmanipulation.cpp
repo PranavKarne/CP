@@ -171,7 +171,9 @@ int a = a ^ b ;
 int b = a ^ b ;
 int a = a ^ b ;
 
+
 /* 
+
 check if ith bit is set or not
 
 (0 based indexing)
@@ -195,9 +197,34 @@ tc = O(1)
 
 */
 
+
 /*  
 
+
 set the ith bit 
+
+N = 9 , i = 2 
+
+9 = 1 0 0 1     [O based indexing from right to left]
+
+N | (1 << i)
+
+
+toggle the ith bit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 */
