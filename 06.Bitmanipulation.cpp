@@ -210,7 +210,120 @@ N = 9 , i = 2
 N | (1 << i)
 
 
-toggle the ith bit
+
+clear the ith bit
+
+N = 13 , i = 2
+
+1 1 0 1 , clear the 2nd bit -> 1 0 0 1 (9)
+
+AND of 0 with anything is 0 only
+
+N & ~(1<<i)
+
+
+toggle the ith bit 
+
+N = 13 , i = 2 
+
+1 1 0 1 --> 1 0 0 1 , toggle means 1 to 0 & 0 to 1
+
+N ^ (1<<i)
+
+
+
+Remove the last set bit(rightmost)
+
+N = 12 -> 1 1 0 0 
+
+N = 16 -> 1 0 0 0 0
+
+N = 15 -> 0 1 1 1 
+
+N = 40 -> 1 0 1 0 0 0
+
+N = 39 -> 1 0 0 1 1 1
+
+N = 84 -> 1 0 1 0 1 0 0 
+
+N = 83 -> 1 0 1 0 0 1 1 
+
+when we do N - 1 , the rightmost set bit is
+converted to 0 and all the remaining unset bits to the right of
+the right most bit  get converted to set 
+
+
+N & N - 1 
+
+N = 40      = 1 0 1 0 0 0
+N - 1 = 39  = 1 0 0 1 1 1
+N & N - 1   = 1 0 0 0 0 0
+
+N = 84 
+
+1 0 1 0 1 0 0
+1 0 1 0 0 1 1 
+& 
+1 0 1 0 0 0 0
+
+
+
+check if the number if power of 2 or not
+
+N = 16
+
+every power of 2 will have 1 set bit in it
+
+if(N & N - 1 == 0) then its a power of 2 else its not
+
+
+
+
+count the number of set bits in a number
+
+
+bruteforce
+
+
+int countsetbits(int n )
+{   
+    cnt = 0 
+    while(n>1)
+    {   
+        cnt += n&1
+        n = n / 2;
+    }
+    if(n==1) cnt++
+    return cnt;
+}
+
+
+to check odd/even
+
+the last bit of an odd number will be 1 always
+
+
+if(N&1) means odd , returns 1 if odd 
+if(!N&1) means even , return 0 if even 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
