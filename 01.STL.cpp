@@ -417,6 +417,69 @@ while (next_permutation(s.begin(),s.end()));
    {
         int x ; cin >> x ;
         v.push_back(x); //O(1)
+        v.pop_back() ;// removes the last value of the vector -> O(1)
+
+        vector<int>v2 = v ; //O(N)
+        // changes in v2 dont effect in v after this line
+        // This creates a new vector v2 and copies all elements from v into it.
+        // v is just a copy of v2  
+
+        vector<int>&v2 = v;
+        // The & means v2 is a reference to v
+        // v2 is just another name for v
+        // Any change to v2 directly affects v
+
+    
+    // 3. vector of pairs
+
+        vector<pair<int,int>>v = {{1,2},{2,3},{4,5}};
+
+        cout << v[0].first << " " << v[0].second << endl; // 1 2
+        cout << v[1].first << " " << v[1].second << endl; // 2 3
+        // every element of the vector will be a pair
+
+        // input of vector of pairs
+
+        int n ; cin >> n ;
+        for(int i = 0 ; i < n ; i++)
+        {
+            int x , y ;
+            cin >> x >> y;
+            v.push_back(make_pair(x,y));
+            v.push_back({x,y});
+        }
+    
+    // 4. array of vectors 
+
+    vector<int>v[10];
+    // 10 vectors of 0 size , v[0] is 1 vector , v[1] is 1 vector etc
+    int N; cin >> N;
+    vector<int>v[N]; // N vectors are declared
+    for(int i = 0 ; i < N ; i++)
+    {
+        int n; cin >> n;
+        for(int j = 0; j < n ; j++)
+        {
+            int x ; cin >> x;
+        //  v[i].push_back(x);
+        }
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
    }
 
