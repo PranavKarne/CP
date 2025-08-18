@@ -363,6 +363,33 @@ while (next_permutation(s.begin(),s.end()));
     cout << max_elemen << '\n' ;
     cout << min_elemen << '\n' ;
 
+    // STL from Luv's Channel
+
+    // 1. pairs 
+
+    pair<int,string> pk;
+    pk = make_pair(45,"pk");
+    cout << pk.first << " " << pk.second << endl;
+
+
+    pair<int,string>pk1;
+    pk1 = {45,"pk"};
+    cout << pk1.first << pk1.second ;
+
+
+    pair<int,string>pk2 = pk1;
+    pk2.first = 3;
+    cout << pk1.first << " ";
+
+
+    
+
+    
+
+
+
+
+
 
 
 
