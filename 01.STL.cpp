@@ -374,15 +374,85 @@ while (next_permutation(s.begin(),s.end()));
 
     pair<int,string>pk1;
     pk1 = {45,"pk"};
-    cout << pk1.first << pk1.second ;
+    cout << pk1.first << " " << pk1.second << endl; // 45 pk 
 
 
     pair<int,string>pk2 = pk1;
     pk2.first = 3;
-    cout << pk1.first << " ";
+    cout << pk1.first << " ";  //45
+
+    //by reference if u pass
+
+    pair<int,string> &pk2 = pk1;
+    pk2.first = 3;
+    cout << pk1.first << " ";  //3
+
+
+    int a[] = {1,2,3};
+    int b[] = {2,3,4};
+    pair<int,int> p_array[3];
+    p_array[0] = {1,2};
+    p_array[1] = {2,3};
+    p_array[2] = {3,4};
+    for(int i = 0 ; i < 3 ; i++)
+    {
+        cout << p_array[i].first << "  " << p_array[i].second; 
+    }
+
+    // input 
+
+    pair<int,string>p;
+    cin >> p.first ;
+
+    // output = 1  2 
+    //          2  3 
+   //           3  4 
+
+
+   // 2. Vectors
+
+   vector<int>v;
+   int n ; cin >> n ;
+   for(int i = 0 ; i < n ; i++)
+   {
+        int x ; cin >> x ;
+        v.push_back(x); //O(1)
+
+   }
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     
 
