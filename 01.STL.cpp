@@ -503,6 +503,75 @@ while (next_permutation(s.begin(),s.end()));
     cout << (*it) << endl; // output is 1
     cout << (*(it+1)) << endl; //output is 2
 
+    for(it = pr.begin() ; it != pr.end(); ++i)
+    {
+        cout << (*it) << endl;
+    }
+    // it++ = moves to next iterator
+    // it+1 = moves to next location
+    // both are same , as next iterator is next location
+    vector<pair<int,int>>v_p = {{1,2},{2,3},{3,4},{4,5}};
+    vector<pair<int,int>> :: iterator it1;
+    for(it1 = v_p.begin() ; it1 != v_p.end() ; it1++)
+    {
+        cout << (*it1).first << " " << (*it1).second << endl;
+    }
+
+    // OR we can write the same loop like this when the iterator is pointing a pair 
+
+    for(it1 = v_p.begin() ; it1 != v_p.end() ; it1++)
+    {
+        cout << (it1 -> first) << " " << (it1 -> second) << endl;
+    }
+
+    // (*it).first <=> (it->first) -> both same , second one is easy
+
+    
+    // 7. Range Based Loops and auto keyword 
+
+    vector<int>pranav;
+    for(int value : pranav)
+    {
+        cout << value << " ";
+    }
+    cout << endl;
+
+    // when we use & the actual is passed and not the copy of it 
+
+    for(int &value : pranav)
+    {
+        value++;
+    }
+
+    for(int value : pranav)
+    {
+        cout << value << " ";
+    }
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
