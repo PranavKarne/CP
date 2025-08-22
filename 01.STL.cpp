@@ -494,6 +494,23 @@ while (next_permutation(s.begin(),s.end()));
         cout << endl;
     }
 
+    // 6. Iterators -> points the elements of the containers(STL)
+
+    // v.begin() -> v[0]
+    // v.end() -> points to next to last element
+    vector<int>pr = {1,2,3,4,5};
+    vector<int> ::iterator it = pr.begin();
+    cout << (*it) << endl; // output is 1
+    cout << (*(it+1)) << endl; //output is 2
+
+
+
+
+
+
+
+
+
 
     
 
@@ -512,7 +529,7 @@ while (next_permutation(s.begin(),s.end()));
 
 
 
-   }
+   
 
    
 
@@ -625,7 +642,3 @@ while (next_permutation(s.begin(),s.end()));
 
 
 
-
-
-
-}
