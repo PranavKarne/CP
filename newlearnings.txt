@@ -333,5 +333,23 @@ int main() {
  Use Case: When user gives size first, then inputs follow.
 
 
-28. substrings 
+
+28. appending to the front the back
+
+here res is the string and b[i] is the char
+appending to the front 
+res = b[i] + res;
+
+appending to the back 
+res = res + b[i];
+Example : res = "abc", b[i] = 'X' -> result → abcX
+
+appending to the front
+res = b[i] + res;
+Example : res = "abc" , b[i] = 'X' -> result -> Xabc
+
+
+
+
+
 

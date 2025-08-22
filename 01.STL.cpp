@@ -461,12 +461,43 @@ while (next_permutation(s.begin(),s.end()));
         for(int j = 0; j < n ; j++)
         {
             int x ; cin >> x;
-        //  v[i].push_back(x);
+        //  v[i].push_back(x); -> ith vector it is 
         }
-
-
-
     }
+    for(int i = 0 ; i < N ; i++)
+    {
+        //printthevector
+    }
+
+    // 5. Vector of Vector
+
+    vector<vector<int>>v1; // every element of v1 is a vector also
+    for(int i = 0;i < N ;i++)
+    {
+        int n; cin >> n;
+        vector<int>temp;
+        for(int j = 0 ; j < n ; j++)
+        {
+            int x ; cin >> x;
+            temp.push_back(x);
+
+        }
+        v1.push_back(temp);
+    }
+
+    for(int i = 0 ; i < v.size() ; i++)
+    {
+        for(int j = 0 ; j < v1[i].size(); j++)
+        {
+                cout << v1[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+
+    
+
+
 
 
 
