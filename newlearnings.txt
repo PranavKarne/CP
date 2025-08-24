@@ -350,6 +350,8 @@ Example : res = "abc" , b[i] = 'X' -> result -> Xabc
 
 
 
-
+29. Sum of odd numbers upto 'n' numbers = n^2
+    Sum of even numbers uptp 'n' numbers = n * (n+1)
+    
 
 
