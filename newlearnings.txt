@@ -355,6 +355,15 @@ Example : res = "abc" , b[i] = 'X' -> result -> Xabc
     Sum of 1st n natural numbers = (n * (n+1)) / 2
 
 
+30. How to find divisors of a number 
+
+for (int i = 1; i * i <= n; i++) {
+    if (n % i == 0) {
+        cout << i << " ";          // first divisor
+        if (i != n / i)            // second divisor (to avoid duplicate when i*i = n)
+            cout << n / i << " ";
+    }
+}
 
 
 
