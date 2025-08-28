@@ -530,6 +530,7 @@ while (next_permutation(s.begin(),s.end()));
     // 7. Range Based Loops and auto keyword 
 
     vector<int>pranav={6,7,8,8,10,11};
+
     for(int value : pranav)
     {
         cout << value << " ";
@@ -547,6 +548,15 @@ while (next_permutation(s.begin(),s.end()));
     {
         cout << value << " "; // 7 8 9 9 11 12 is the output 
     }
+
+    
+
+
+
+
+
+
+
 
     
 
