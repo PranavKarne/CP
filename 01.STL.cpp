@@ -541,17 +541,27 @@ while (next_permutation(s.begin(),s.end()));
 
     for(int &value : pranav)
     {
-        value++; // every value is incremented in the vector 
+        value++; 
+        // every value is incremented in the vector 
         // value is a reference to each element of the vector
         // value++, it actually increments the element inside the vector itself.
-
     }
 
     for(int value : pranav)
     {
-        cout << value << " "; // 7 8 9 9 11 12 is the output 
         
+        cout << value << " "; 
+        // 7 8 9 9 11 12 is the output
+        // value is just a copy of each element in the vector.
+        // Any changes you make to 'value' will not affect the vector.
+
     }
+
+
+
+
+
+
 
 
 
