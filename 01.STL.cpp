@@ -549,13 +549,20 @@ while (next_permutation(s.begin(),s.end()));
 
     for(int value : pranav)
     {
-        
+
         cout << value << " "; 
         // 7 8 9 9 11 12 is the output
         // value is just a copy of each element in the vector.
         // Any changes you make to 'value' will not affect the vector.
 
     }
+
+    vector<pair<int,int>>vec_pair = {{1,2} , {5,6}};
+    
+
+
+
+
 
 
 
