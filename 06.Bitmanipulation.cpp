@@ -340,6 +340,7 @@ if(!N&1) means even , return 0 if even
 
 
 
+
 */
 
 
