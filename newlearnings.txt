@@ -392,3 +392,12 @@ upper_bound → points to the first element > target.
 34.
 git add . && git commit -m "daily update: $(date +%Y-%m-%d)" && git push origin main
 
+35. 
+to count the number of times a number appears in a vector
+int count = upper_bound(v.begin(), v.end(), 3) - lower_bound(v.begin(), v.end(), 3);
+cout << "3 appears " << count << " times\n";   // 2
+
+36. 
+
+
+
