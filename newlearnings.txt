@@ -383,5 +383,9 @@ for (int i = 1; i * i <= n; i++) {
     if b % a != 0 then LCM(a,b) > b and gcd(a,b) < a
 
 
-    
+33.
+
+lower_bound → points to the first element ≥ target.
+upper_bound → points to the first element > target.
+
 
