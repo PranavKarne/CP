@@ -32,7 +32,7 @@ int lowerBound(vector<int> arr, int n, int x) {
         // maybe an answer
         if (arr[mid] >= x) {
             ans = mid;
-            //look for smaller index on the left
+            //look for a smaller index on the left
             high = mid - 1;
         }
         else {
@@ -42,16 +42,21 @@ int lowerBound(vector<int> arr, int n, int x) {
     return ans;
 }
 
-int main()
-{
-    vector<int> arr = {3, 5, 8, 15, 19};
-    int n = 5, x = 9;
-    int ind = lowerBound(arr, n, x); 
-    cout << "The lower bound is the index: " << ind << "\n";
-    return 0;
-}
-
 // upper_bound → points to the first element > target.
+
+/*
+Example of upper bound
+Example 1:
+Input Format: N = 4, arr[] = {1,2,2,3}, x = 2
+Result: 3
+Explanation: Index 3 is the smallest index such that arr[3] > x.
+
+Example 2:
+Input Format: N = 6, arr[] = {3,5,8,9,15,19}, x = 9
+Result: 4
+Explanation: Index 4 is the smallest index such that arr[4] > x.
+
+*/
 
 
 int upperBound(vector<int> &arr, int x, int n) {
@@ -61,9 +66,9 @@ int upperBound(vector<int> &arr, int x, int n) {
     while (low <= high) {
         int mid = (low + high) / 2;
         // maybe an answer
-        if (arr[mid] > x) {
+        if (arr[mid] > x){
             ans = mid;
-            //look for smaller index on the left
+            //look for a smaller index on the left
             high = mid - 1;
         }
         else {
@@ -72,6 +77,13 @@ int upperBound(vector<int> &arr, int x, int n) {
     }
     return ans;
 }
+
+// STL for lower_bound && upper_bound
+
+
+
+
+
 
 
 
