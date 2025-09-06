@@ -6,8 +6,10 @@ int main()
 
     // lower_bound → points to the first element ≥ target.
 
-    // in binary , left is for smaller ones and right is for bigger ones
+    // in BS , left is for smaller ones and right is for bigger ones
     
+    // if we dont find any index in bs 
+
 
 
 
