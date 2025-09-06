@@ -397,7 +397,21 @@ to count the number of times a number appears in a vector
 int count = upper_bound(v.begin(), v.end(), 3) - lower_bound(v.begin(), v.end(), 3);
 cout << "3 appears " << count << " times\n";   // 2
 
-36. 
+36. lower_bound in cpp stl 
+
+    vector<int> v = {1, 3, 3, 5, 7};
+
+    int idx = lower_bound(v.begin(), v.end(), 3) - v.begin();
+    cout << "Index: " << idx << endl;     // 1
+    cout << "Value: " << v[idx] << endl;  // 3
+
+
+                        (OR)
+    
+    vector<int> v = {1, 3, 3, 5, 7};
+    auto lb = lower_bound(v.begin(), v.end(), 3);  // auto deduces the type
+    cout << "lower_bound points to: " << *lb << endl;    // 3
+    cout << "Index: " << (lb - v.begin()) << endl;       // 1
 
 
 
