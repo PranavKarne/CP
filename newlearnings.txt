@@ -487,3 +487,28 @@ int main()
         x++;
     }
 }
+
+
+
+40.  resize() in cpp
+
+If new size < current size → extra elements are removed.
+
+If new size > current size → new elements are added, initialized with 0 (for ints) or default constructor.
+
+
+
+vector<int> v = {1,2,3,4,5};
+
+// shrink
+v.resize(3);   
+// v = {1,2,3}
+
+// expand
+v.resize(6);   
+// v = {1,2,3,0,0,0}
+
+// expand with custom value
+v.resize(8, 7); 
+// v = {1,2,3,0,0,0,7,7}
+

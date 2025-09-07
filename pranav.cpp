@@ -1,36 +1,32 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int digitsum(int n)
-{
-    int sum = 0;
-    while(n > 0)
-    {
-        int ld = n % 10;
-        sum += ld;
-        n = n / 10; 
-    }
-    return sum;
-}
-
-
 int main()
 {
-    int n; cin >> n;
-    int target = 2 * digitsum(n);
-
-    int x = n + 1;
-    while(true)
+    int t; cin >> t;
+    while(t--)
     {
-        if(digitsum(x) == target)
-        {
-            cout << x << endl;
-            break;
-        }
-        x++;
-        
+        int k , x;
+        cin >> k >> x;
 
+        for(long long s = 1 ; s < 1000 ; s++)
+        {
+            long long y = s;
+            for(long long  i = 0 ; i < k ; i++)
+            {
+                if(y%2==0) y = y / 2;
+                else y = 3*y +1;
+            }
+
+            if(y==x)
+            {
+                cout << s << endl;
+                break;
+            }
+        
+        }
+        
     }
-    
+
     
 }
