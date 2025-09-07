@@ -25,6 +25,7 @@ output :  1000000000.000000000000000
         vector<int>v(n);
 
 4. Sum of 1st "n" natural numbers from 0 to n-1 is (n * (n-1)) / 2
+    Sum from 1 to n = (n * (n+1)) / 2
 
 5. sorting in a string
 
