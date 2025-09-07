@@ -471,7 +471,6 @@ int digitsum(int n)
     return sum;
 }
 
-
 int main()
 {
     int n; cin >> n;
@@ -486,9 +485,5 @@ int main()
             break;
         }
         x++;
-        
-
     }
-    
-    
 }
