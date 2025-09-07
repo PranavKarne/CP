@@ -18,8 +18,6 @@ int main()
     cout << endl; 
 
 
-
-
     cout << "example 2" << endl;
     vector<int>karne = {7,8,9};
     vector<int>pk = {10,11,12};
@@ -27,6 +25,8 @@ int main()
     karne.insert(karne.end(),pk.begin(),pk.end());
     for(int p : karne) cout << p << " ";
     cout << endl;
+
+
 
 
 

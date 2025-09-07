@@ -80,6 +80,60 @@ int upperBound(vector<int> &arr, int x, int n) {
 
 // STL for lower_bound && upper_bound
 
+/*
+
+lower_bound in cpp stl 
+
+    vector<int> v = {1, 3, 3, 5, 7};
+
+if u want the Index directly do this : 
+    int idx = lower_bound(v.begin(), v.end(), 3) - v.begin();
+    cout << "Index: " << idx << endl;     // 1
+    cout << "Value: " << v[idx] << endl;  // 3
+
+
+                        (OR)
+
+if u want the interator    
+    vector<int> v = {1, 3, 3, 5, 7};
+    auto lb = lower_bound(v.begin(), v.end(), 3);  // auto deduces the type
+    cout << "lower_bound points to: " << *lb << endl;    // 3
+    cout << "Index: " << (lb - v.begin()) << endl;       // 1
+
+
+upper_bound in cpp stl 
+
+vector<int> v = {1, 3, 3, 5, 7};
+
+// If you want the Index directly
+int idx = upper_bound(v.begin(), v.end(), 3) - v.begin();
+cout << "Index: " << idx << endl;     // 3
+cout << "Value: " << v[idx] << endl;  // 5
+
+
+// (OR)
+
+// If you want the iterator
+auto ub = upper_bound(v.begin(), v.end(), 3);
+cout << "upper_bound points to: " << *ub << endl;    // 5
+cout << "Index: " << (ub - v.begin()) << endl;       // 3
+
+*/
+
+// floor in BS = greatest element ≤ target
+// ceil in BS = smallest element ≥ target
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
