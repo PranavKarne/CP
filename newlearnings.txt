@@ -512,3 +512,27 @@ v.resize(6);
 v.resize(8, 7); 
 // v = {1,2,3,0,0,0,7,7}
 
+41.
+
+
+    string s; 
+    getline(cin , s);
+    string temp = "";
+
+    unordered_map<string,int> pranav;
+    for(int i = 0 ; i < s.size() ; i++)
+    {
+        if(s[i] == '#')
+        {   
+            temp = ""; 
+            while(i < s.size() && s[i] != ' ') 
+            {
+                temp += s[i];
+                i++;
+            }
+            if(!temp.empty()) pranav[temp]++;
+        }
+        else i++;
+       
+    }
+    for (auto &it : pranav) cout << it.first << " " << it.second << endl;
