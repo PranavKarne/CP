@@ -7,7 +7,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main() {
+int main() 
+{
+    // number hashing
 
     int n;
     cin >> n;
@@ -31,4 +33,77 @@ int main() {
         cout << hash[number] << endl;
     }
     return 0;
+
+
+
+
+// character hashing
+
+    string s;
+    cin >> s;
+    // a - 97 , z - 122 
+
+    int string_hash[26] = {0};
+    for (int i = 0; i < s.size(); i++) 
+    {
+        string_hash[s[i] - 'a']++;
+    }
+
+    int q;
+    cin >> q;
+    while (q--) 
+    {
+        char c;
+        cin >> c;
+        // fetch:
+        cout << string_hash[c - 'a'] << endl;
+    }
+
+    // Code if the string contains both uppercase and lowercase:
+    // works for both 
+
+    int hash1[256] = {0};
+    for (int i = 0; i < s.size(); i++) {
+        hash1[s[i]]++;
+    }
+
+    int q;
+    cin >> q;
+    while (q--) {
+        char c;
+        cin >> c;
+        // fetch:
+        cout << hash[c] << endl;
+    }
+    // maps - stores everything in sorted order
+    // Key: In a map, a key refers to the element, for which we want to store information. 
+    // We can access the value of a key using the key itself like mp[key].
+    // Value: Value refers to the information stored corresponding to a key.
+    map<int, int> mp;
+    for (int i = 0; i < n; i++) {
+        mp[arr[i]]++;
+    }
+
+    int number;
+    cin >> number;
+        // fetch:
+    cout << mp[number] << endl;
+    
+    // using maps in string hashing
+
+    map<char,int>mpp;
+    for (int i = 0; i < n; i++) {
+        mpp[s[i]]++;
+    }
+
+    // character hashing
+
+    map<char, int> mp;
+    for (char c : s) 
+    {
+        mp[c]++;
+    }
+    
+
+
 }
