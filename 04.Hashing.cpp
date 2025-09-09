@@ -1,6 +1,8 @@
 
 // If we say the definition of hashing in a naive way, it is nothing but the combination of the steps, pre-storing, and fetching.
 // inside main function the maximum int array size is 10^6 and globally 10^7 is maximum 
+// for bool arrays it is 1e7 in main function and 1e8 globally
+
 // 10^6 = 1e6 
 #include <bits/stdc++.h>
 using namespace std;
