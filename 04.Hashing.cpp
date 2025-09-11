@@ -104,7 +104,23 @@ int main()
         mp[c]++;
     }
 
+    // maps = in storing and fetching takes log n TC in all cases 
+
+
+
+    // unordered_map = no order 
+    // TC -> the avg and the best tc is O(1) for most cases in
+    // in worst case it is O(N) for unordered_map , very rare
+
     
+
+
+
+
+
+
+
+
     
 
 
