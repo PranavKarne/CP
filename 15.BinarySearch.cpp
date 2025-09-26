@@ -91,7 +91,7 @@ if u want the Index directly do this :
     cout << "Index: " << idx << endl;     // 1
     cout << "Value: " << v[idx] << endl;  // 3
 
-
+r
                         (OR)
 
 if u want the interator    
