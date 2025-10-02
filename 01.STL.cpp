@@ -385,7 +385,7 @@ while (next_permutation(s.begin(),s.end()));
 
     pair<int,string> &pk2 = pk1;
     pk2.first = 3;
-    cout << pk1.first << " ";  //3
+    cout << pk1.first << " ";  // 3 
 
 
     int a[] = {1,2,3};
@@ -401,12 +401,13 @@ while (next_permutation(s.begin(),s.end()));
 
     // input 
 
+
     pair<int,string>p;
     cin >> p.first ;
 
     // output = 1  2 
     //          2  3 
-   //           3  4 
+    //           3  4 
 
 
    // 2. Vectors
@@ -546,18 +547,65 @@ while (next_permutation(s.begin(),s.end()));
         // value is a reference to each element of the vector
         // value++, it actually increments the element inside the vector itself.
     }
-
     for(int value : pranav)
     {
-
         cout << value << " "; 
         // 7 8 9 9 11 12 is the output
         // value is just a copy of each element in the vector.
         // Any changes you make to 'value' will not affect the vector.
-
     }
 
     vector<pair<int,int>>vec_pair = {{1,2} , {5,6}};
+    for(pair<int,int> &vec_pair2 : vec_pair)
+    {
+        cout << vec_pair2.first << " " << vec_pair2.second << endl;
+    }
+
+    // auto keyword
+
+    auto a = 1;
+    cout << a << endl;
+
+    for(auto &vec_pair2 : vec_pair)
+    {
+        cout << vec_pair2.first << " " << vec_pair2.second << endl;
+    }
+
+    // maps 
+
+    map<int,string>m;
+    m[1] = "abc"; // o(log n)
+    m[5] = "cdc";
+    m[6]; // o(log n) 
+    m.insert({4,"afg"});
+    map<int,string> :: iterator it;
+    for(auto &it : m )
+    {
+        cout << it.first << " " << it.second;
+    }
+
+    // values are stored in sorted order
+    // if keys are strings then they are stored in lexographical order , like dictoniary order
+    // keys are unique 
+    // if keys are repeated during insertion then , the key value pair are updated 
+
+    auto it = m.find(3);
+    for(auto it = m.begin(); it != m.end(); ++it) 
+    {
+            cout << it->first << " " << it->second << endl; 
+    }
+
+
+
+
+
+    
+
+
+
+
+
+
     
 
 
