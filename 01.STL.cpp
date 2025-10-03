@@ -571,29 +571,66 @@ while (next_permutation(s.begin(),s.end()));
         cout << vec_pair2.first << " " << vec_pair2.second << endl;
     }
 
-    // maps 
 
-    map<int,string>m;
-    m[1] = "abc"; // o(log n)
-    m[5] = "cdc";
-    m[6]; // o(log n) 
-    m.insert({4,"afg"});
-    map<int,string> :: iterator it;
-    for(auto &it : m )
+    // maps 
+    map<int,string>map_pranav;
+    map_pranav[1] = "abc"; // O(log n)
+    map_pranav[5] = "cdc";
+    map_pranav[6]; // O(log n) creates key=6 with empty string
+    map_pranav.insert({4,"afg"});
+
+    // iterate over map using range-based for
+    for(auto &entry : map_pranav )  // changed 'it' to 'entry' to avoid conflict
     {
-        cout << it.first << " " << it.second;
+        cout << entry.first << " " << entry.second << endl;
     }
 
     // values are stored in sorted order
-    // if keys are strings then they are stored in lexographical order , like dictoniary order
+    // if keys are strings then they are stored in lexographical order, like dictionary order
     // keys are unique 
-    // if keys are repeated during insertion then , the key value pair are updated 
+    // if keys are repeated during insertion then, the key value pair are updated 
 
-    auto it = m.find(3);
-    for(auto it = m.begin(); it != m.end(); ++it) 
+    auto it = map_pranav.find(5);  // search for key = 5
+
+    if (it != map_pranav.end()) 
     {
-            cout << it->first << " " << it->second << endl; 
+        cout << "Found: " << it->first << " -> " << it->second << endl;
+    } 
+    else
+    {
+        // key does not exist
+        cout << "Not found" << endl;
     }
+
+
+    // question = given n strings , print unique strings in lexiographically order with their frequency 
+
+    map<string,int>karne;
+    int n ; cin >> n;
+    for(int i = 0 ; i < n ; i++)
+    {
+        string s; cin >> s;
+        karne[s]++;
+    }
+    for(auto pk : karne) cout << pk.first << " " << pk.second << endl;
+
+
+
+    // unordered_maps 
+
+    unordered_map<int,string>uno_map;
+    // keys are in random order 
+    // uses hash tables for in-built implementation
+    
+
+
+
+    
+
+
+
+
+
 
 
 
