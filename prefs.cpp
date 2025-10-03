@@ -3,14 +3,14 @@
 3rd oct
 
 
-1.Best Time to Buy and Sell Stock - minprice , maxprofit
+1. Best Time to Buy and Sell Stock - minprice , maxprofit
 2. Strobogrammatic Number - 0,1,3,6,9
 3. minimum product subset of an array - bitmasking 
 4. Class room attendance tracker - simple unor_map problem
 5. coin change
 6. lemonade change
 7. minimum cost to connect ropes - priority queue 
-8. find smallest common element in all rows
+8. find smallest common element in all rows - unor_map 
 9. print matrix rows as they appear 
 10. roman to integer 
 
@@ -304,4 +304,78 @@ Explanation: The only element, 7, is common across all rows.
 
 
 code : 
+
+    int n, m;
+    cin >> n >> m;
+
+    vector<vector<int>> matrix(n, vector<int>(m));
+
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < m; j++) {
+            cin >> matrix[i][j];
+        }
+    }
+
+    unordered_map<int,int> freqmap;
+
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < m; j++) {
+            freqmap[matrix[i][j]]++;
+        }
+    }
+
+    int result = INT_MAX;
+    for(auto &it : freqmap) {
+        if(it.second == n) {
+            result = min(result, it.first);
+        }
+    }
+
+    if(result == INT_MAX) 
+        cout << -1 << endl;
+    else 
+        cout << result << endl;
+
+
+it.first → the number from the matrix
+
+it.second → how many rows it appeared in
+
+it.second == n → the number is present in all rows
+
+min(result, it.first) → keeps the smallest number among all common numbers
+
+
+10. roman to integer 
+
+Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
+
+Symbol       Value
+I             1
+V             5
+X             10
+L             50
+C             100
+D             500
+M             1000
+For example, 2 is written as II in Roman numeral, just two ones added together. 12 is written as XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.
+
+Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:
+
+I can be placed before V (5) and X (10) to make 4 and 9. 
+X can be placed before L (50) and C (100) to make 40 and 90. 
+C can be placed before D (500) and M (1000) to make 400 and 900.
+Given a roman numeral, convert it to an integer.
+
+
+We have a map<char,int> that stores Roman → Integer mappings.
+
+We loop through each character in the string.
+
+Rule:
+
+If the next Roman digit is bigger than the current one → subtract the current digit.
+
+Otherwise → add it.
+
 
