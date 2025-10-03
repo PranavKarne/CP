@@ -3,16 +3,16 @@
 3rd oct
 
 
-1. Best Time to Buy and Sell Stock - minprice , maxprofit
-2. Strobogrammatic Number - 0,1,3,6,9
-3. minimum product subset of an array - bitmasking 
-4. Class room attendance tracker - simple unor_map problem
-5. coin change
-6. lemonade change
+1.. Best Time to Buy and Sell Stock - minprice , maxprofit 
+2.. Strobogrammatic Number - 0,1,3,6,9
+3.. minimum product subset of an array - bitmasking 
+4.. Class room attendance tracker - simple unor_map problem
+5.. encrypted staircase problem 
+6.. lemonade change
 7. minimum cost to connect ropes - priority queue 
-8. find smallest common element in all rows - unor_map 
+8.. find smallest common element in all rows - unor_map 
 9. print matrix rows as they appear 
-10. roman to integer 
+10.. roman to integer - unor_map and one condition 
 
 
 
@@ -378,4 +378,166 @@ If the next Roman digit is bigger than the current one → subtract the current 
 
 Otherwise → add it.
 
+int romanToInt(string s) 
+    {   
+
+        map<char,int>pranav = {
+            {'I',1} , {'V',5}, {'X',10} ,{'L',50} , {'C',100} , {'D',500} , {'M',1000}
+        };
+
+
+        int res = 0;
+        for(int i = 0; i < s.size() ; i++)
+        {
+            if(i+1 < s.size() && pranav[s[i]] < pranav[s[i+1]])
+            {
+                res -= pranav[s[i]];
+            }
+            else res += pranav[s[i]];
+        }
+
+        return res;
+        
+    }
+
+Dry Run Example 3: s = "MCMXCIV" (= 1994)
+
+res = 0
+
+i=0 → 'M'(1000), next='C'(100). 1000 < 100 ❌ → add → res=1000
+
+i=1 → 'C'(100), next='M'(1000). 100 < 1000 ✅ → subtract → res=1000-100=900
+
+i=2 → 'M'(1000), next='X'(10). 1000 < 10 ❌ → add → res=900+1000=1900
+
+i=3 → 'X'(10), next='C'(100). 10 < 100 ✅ → subtract → res=1900-10=1890
+
+i=4 → 'C'(100), next='I'(1). 100 < 1 ❌ → add → res=1890+100=1990
+
+i=5 → 'I'(1), next='V'(5). 1 < 5 ✅ → subtract → res=1990-1=1989
+
+i=6 → 'V'(5), no next → add → res=1989+5=1994
+
+✅ Output: 1994
+
+
+int romantoint(string &s)
+{
+
+    map<char,int>pk = {{'I',1},{'V',5},{'X',10},{'L',50},{'D',500},{'C',100},{'M',1000},};
+    int res = 0;
+    for(int i = 0; i < s.size() ; i++)
+    {
+        if(pk[s[i]] < pk[s[i+1]] && i+1 < s.size()) res -= pk[s[i]];
+        else res += pk[s[i]];
+    }
+    return res;
+}
+
+
+6. lemonade change 
+
+At a lemonade stand, each lemonade costs $5. Customers are standing in a queue to buy from you and order one at a time (in the order specified by bills). Each customer will only buy one lemonade and pay with either a $5, $10, or $20 bill. You must provide the correct change to each customer so that the net transaction is that the customer pays $5.
+
+Note that you do not have any change in hand at first.
+
+Given an integer array bills where bills[i] is the bill the ith customer pays, return true if you can provide every customer with the correct change, or false otherwise.
+
+ 
+
+Example 1:
+
+Input: bills = [5,5,5,10,20]
+Output: true
+Explanation: 
+From the first 3 customers, we collect three $5 bills in order.
+From the fourth customer, we collect a $10 bill and give back a $5.
+From the fifth customer, we give a $10 bill and a $5 bill.
+Since all customers got correct change, we output true.
+Example 2:
+
+Input: bills = [5,5,10,10,20]
+Output: false
+Explanation: 
+From the first two customers in order, we collect two $5 bills.
+For the next two customers in order, we collect a $10 bill and give back a $5 bill.
+For the last customer, we can not give the change of $15 back because we only have two $10 bills.
+Since not every customer received the correct change, the answer is false.
+ 
+
+
+bool lemonadeChange(vector<int>& bills)
+    {
+        int fives = 0;
+        int tens = 0;
+        int twenties = 0;
+        int n = bills.size();
+        for(int i = 0 ; i < n ; i++)
+        {
+            if(bills[i] == 5) fives++;
+            else if(bills[i] == 10)
+            {
+                if(fives)
+                {
+                    fives--;
+                    tens++;
+                }
+                else return false;
+            }
+            else
+            {
+                if(tens && fives )
+                {
+                    tens--;
+                    fives--;
+                }
+                else if(fives >= 3) fives -= 3;
+                else return false;
+            }
+        }
+        return true;
+}
+
+
+
+5. encrypted staircase problem - recursion 
+
+
+
+
+
+int countWays(int n, int m) {
+    if (n == 0) return 1;
+    if (n < 0) return 0;
+
+    int ways = 0;
+    for (int step = 1; step <= m; step++)
+        ways += countWays(n - step, m);
+
+    return ways;
+}
+
+int countways(int n , int m)
+{
+    if(n==0) return 1;
+    if (n < 0) return 0;
+    int ways = 0 ;w
+    for(int step = 1 ; step <= m ; step++)
+    {
+        ways += countWays(n - step , m);
+    }
+    return ways;
+}
+
+int countways(int n , int m)
+{
+    if(n == 0 ) return 1;
+    if(n < 0) return 0;
+    int ways = 0 ;
+    for(int step = 1; step <= m ; step++)
+    {
+        ways += countways(n-step,m);
+    }
+    return ways;
+}
 
