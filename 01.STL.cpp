@@ -618,10 +618,132 @@ while (next_permutation(s.begin(),s.end()));
 
     // unordered_maps 
 
-    unordered_map<int,string>uno_map;
-    // keys are in random order 
+    
+
+    // keys are in random order they are not sorted
     // uses hash tables for in-built implementation
-    
+    // . first is key , .second is value
+
+    // O(1) operations
+    // we cannot put a pair as the key in uno_map , but for map it works
+    // pair doesnt have an inbuilt hash function actually so it doesnt work with uno_map
+    // for maps , they insert based on comparison 
+
+    question :
+    given N strings and Q queries in each query you are given a string
+    print frequency of tht string
+
+    unordered_map<string, int> unmap; 
+    int n ; cin >> n;
+    for(int i = 0 ; i < n ; i++)
+    {
+        string s; cin >> s;
+        unmap[s]++;
+        
+    }
+    int q;
+    cin >> q;
+    while(q--)
+    {
+        string s; cin >> s;
+        cout << unmap[s] << endl;
+    }
+
+    // sets
+
+    // collection of elements , we dont have values here , like in maps
+    // they print in sorted order 
+    // they store unique elements only
+    // internal implemention is red black trees - self balancing trees
+
+
+    set<string> s1;
+    s1.insert("abc");
+    s1.insert("pk"); 
+    s1.insert("karne"); // O(log n)
+
+    auto it = s1.find("abc");
+
+    void print(set<string>s1)
+    {
+        for(string value : s1)
+        {
+            cout << value << endl; 
+        }
+    }
+
+    auto it = s1.find("pk");  // O(log n)
+    if(it != s1.end())
+    {
+        cout << (*it) << endl;
+    }
+
+    auto it = s1.find("abc");
+    if(it != s.end())
+    {
+        s.erase(it);
+    }
+
+    // unordered_set =  here ordering doesnt matter , if some value is present or not 
+
+
+    // here timecomplexities are O(1) - find , insert
+
+    question : 
+    given n strings and q queries in each query you are given 
+    a string print yes if string is present else print no 
+
+    unordered_set<string>karne;
+    int n ; cin >> n ;
+    for(int i = 0 ; i < n ; i++)
+    {
+        string str; cin >> str;
+        s.insert(str);
+    }
+
+    int q; cin >> q;
+    while (q--)
+    {
+        string str; cin >> str;
+        if(s.find(str) == s.end()) cout << "false" << endl;
+        else cout << "true" << endl;
+    }
+
+
+    // multiset - multiple values are allowed here + they are sorted too 
+
+    multiset<string>s;
+
+    // O(log n)
+
+    s.insert("abc");
+    s.insert("pk");
+    s.insert("abc");
+
+    // all the 3 are printed , duplicates are allowed 
+
+    // .find returns the iterator of the 1st occurence of tht value , if duplicates present
+
+    auto it = s.find("abc");
+    if(it != s.end())
+    {
+        s.erase(it);
+    }
+
+    // deletes the first occurence of abc , deletes the value at the iterator 
+      
+
+
+    s.erase("abc") // this will delete all occurences of abc in the multiset
+
+
+    // question 
+
+
+
+
+
+
 
 
 
@@ -635,161 +757,19 @@ while (next_permutation(s.begin(),s.end()));
 
 
 
+     
 
-    
 
 
 
 
 
 
-    
 
 
 
 
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
-
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
+}
 }
 
 
