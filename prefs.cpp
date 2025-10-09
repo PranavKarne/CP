@@ -735,7 +735,7 @@ int counthomosubstrings(string s)
     }
     ans = ans % MOD;
     return ans+1;
-    
+
 }
 
 
@@ -1118,7 +1118,7 @@ int coinChange(vector<int>& coins, int amount)
         }
 
         if(amount != 0) return -1;
-        return count;
+        else return count;
 }
 
 
@@ -1159,6 +1159,7 @@ word2:    p   q
 string mergeAlternately(string word1, string word2)
 {
         string ans = "";
+
         int n = word1.size();
         int m = word2.size();
 
@@ -1173,9 +1174,7 @@ string mergeAlternately(string word1, string word2)
 
         while(i < n) ans += word1[i++];
         while(j < m ) ans += word2[j++];
-
         return ans;
-   
 }
 
 
@@ -1471,8 +1470,9 @@ Given the number of friends, n, and an integer k, return the winner of the game.
 class Solution {
 public:
     int findTheWinner(int n, int k) {
-        int winner = 0; // 0-indexed base case
-        for (int i = 1; i <= n; i++) {
+        int winner = 0; // 0-indexed base case 
+        for (int i = 1; i <= n; i++) 
+        {
             winner = (winner + k) % i;
         }
         return winner + 1; // convert to 1-indexed
