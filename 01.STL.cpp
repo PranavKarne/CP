@@ -737,7 +737,35 @@ while (next_permutation(s.begin(),s.end()));
     s.erase("abc") // this will delete all occurences of abc in the multiset
 
 
-    // question 
+    // question = https://www.hackerearth.com/practice/data-structures/trees/heapspriority-queues/practice-problems/algorithm/monk-and-the-magical-candy-bags/
+
+    int main()
+    {
+        int n ,k ; 
+        cin >> n >> k ;
+        multiset<long long>bags;
+        for(int i = 0 ; i < n ; i++)
+        {
+            int candy_ct;
+            cin >> candy_ct;
+            bags.insert(candy_ct);
+        }
+
+        long long total_candies = 0;
+        for(int i = 0 ; i < k ; i++)
+        {
+            auto last = (--bags.end());
+            int candy_ct = *last_it;
+            total_candies += candy_ct;
+            bags_erase(last_it);
+            
+
+
+        }
+
+
+
+    }
 
 
 
