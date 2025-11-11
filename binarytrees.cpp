@@ -670,7 +670,7 @@ int main()
 
     
     if(isUnivalTree(root)) cout << "True" << endl;
-    else return false;
+    else cout << "False" << endl;;
 
     return 0;
 }
@@ -1076,6 +1076,99 @@ int main() {
 }
 
 
+8. Maximum Level Sum of a Binary Tree
+
+#include <bits/stdc++.h>
+using namespace std;
+
+// Definition for a binary tree node
+struct TreeNode {
+    int val;
+    TreeNode* left;
+    TreeNode* right;
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+};
+
+// Function to build a binary tree from level order input (with "null" values)
+TreeNode* buildTree(vector<string>& arr) {
+    if (arr.empty() || arr[0] == "null")
+        return nullptr;
+
+    TreeNode* root = new TreeNode(stoi(arr[0]));
+    queue<TreeNode*> q;
+    q.push(root);
+
+    int i = 1;
+    while (!q.empty() && i < arr.size()) {
+        TreeNode* node = q.front();
+        q.pop();
+
+        // Left child
+        if (i < arr.size() && arr[i] != "null") {
+            node->left = new TreeNode(stoi(arr[i]));
+            q.push(node->left);
+        }
+        i++;
+
+        // Right child
+        if (i < arr.size() && arr[i] != "null") {
+            node->right = new TreeNode(stoi(arr[i]));
+            q.push(node->right);
+        }
+        i++;
+    }
+
+    return root;
+}
+
+// ✅ Function to find the level with maximum sum
+int maxLevelSum(TreeNode* root) {
+    if (!root) return 0;
+
+    queue<TreeNode*> q;
+    q.push(root);
+
+    int level = 0;
+    int ansLevel = 0;
+    long long maxSum = LLONG_MIN;
+
+    while (!q.empty()) {
+        level++;
+        int size = q.size();
+        long long sum = 0;
+
+        for (int i = 0; i < size; i++) {
+            TreeNode* node = q.front();
+            q.pop();
+
+            sum += node->val;
+
+            if (node->left) q.push(node->left);
+            if (node->right) q.push(node->right);
+        }
+
+        if (sum > maxSum) {
+            maxSum = sum;
+            ansLevel = level;
+        }
+    }
+
+    return ansLevel;
+}
+
+int main() {
+    int n;
+    cin >> n;
+    vector<string> arr(n);
+    for (int i = 0; i < n; i++)
+        cin >> arr[i];
+
+    TreeNode* root = buildTree(arr);
+
+    cout << "Level with maximum sum: " << maxLevelSum(root) << endl;
+
+    return 0;
+}
 
 
 
