@@ -590,7 +590,490 @@ int main()
 }
 
 
-3. 
+3. univalued binary tree - 965 
+
+A binary tree is uni-valued if every node in the tree has the same value.
+
+Given the root of a binary tree, return true if the given tree is uni-valued, or false otherwise.
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+// Definition for a binary tree node
+struct TreeNode {
+    int val;
+    TreeNode* left;
+    TreeNode* right;
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+};
+
+// Function to build a binary tree from level order input (with "null" values)
+TreeNode* buildTree(vector<string>& arr) {
+    if (arr.empty() || arr[0] == "null")
+        return nullptr;
+
+    TreeNode* root = new TreeNode(stoi(arr[0]));
+    queue<TreeNode*> q;
+    q.push(root);
+
+    int i = 1;
+    while (!q.empty() && i < arr.size()) {
+        TreeNode* node = q.front();
+        q.pop();
+
+        // Left child
+        if (i < arr.size() && arr[i] != "null") {
+            node->left = new TreeNode(stoi(arr[i]));
+            q.push(node->left);
+        }
+        i++;
+
+        // Right child
+        if (i < arr.size() && arr[i] != "null") {
+            node->right = new TreeNode(stoi(arr[i]));
+            q.push(node->right);
+        }
+        i++;
+    }
+
+    return root;
+}
+
+bool dfs(TreeNode* node , int val)
+{
+    if(node == nullptr) return true;
+    if(node->val != val) return false;
+    return dfs(node->left , val) && dfs(node->right,val);
+}
+
+
+bool isUnivalTree(TreeNode* root) 
+{   
+    if(root == nullptr) return true;
+    return dfs(root,root->val);
+ 
+}
+
+
+int main() 
+{
+    int n;
+    cin >> n;
+    vector<string> arr(n);
+    for (int i = 0; i < n; i++)
+        cin >> arr[i];
+
+    TreeNode* root = buildTree(arr);
+    
+
+    
+    if(isUnivalTree(root)) cout << "True" << endl;
+    else return false;
+
+    return 0;
+}
+
+
+4. level order traversal (BFS)
+
+#include <bits/stdc++.h>
+using namespace std;
+
+// Definition for a binary tree node
+struct TreeNode {
+    int val;
+    TreeNode* left;
+    TreeNode* right;
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+};
+
+// Function to build a binary tree from level order input (with "null" values)
+TreeNode* buildTree(vector<string>& arr) {
+    if (arr.empty() || arr[0] == "null")
+        return nullptr;
+
+    TreeNode* root = new TreeNode(stoi(arr[0]));
+    queue<TreeNode*> q;
+    q.push(root);
+
+    int i = 1;
+    while (!q.empty() && i < arr.size()) {
+        TreeNode* node = q.front();
+        q.pop();
+
+        // Left child
+        if (i < arr.size() && arr[i] != "null") {
+            node->left = new TreeNode(stoi(arr[i]));
+            q.push(node->left);
+        }
+        i++;
+
+        // Right child
+        if (i < arr.size() && arr[i] != "null") {
+            node->right = new TreeNode(stoi(arr[i]));
+            q.push(node->right);
+        }
+        i++;
+    }
+
+    return root;
+}
+
+// ✅ Level Order Traversal (BFS)
+void levelOrder(TreeNode* root) {
+    if (!root) return;
+
+    queue<TreeNode*> q;
+    q.push(root);
+
+    while (!q.empty()) {
+        int size = q.size();
+
+        // Print all nodes at the current level
+        for (int i = 0; i < size; i++) {
+            TreeNode* node = q.front();
+            q.pop();
+
+            cout << node->val << " ";
+
+            if (node->left) q.push(node->left);
+            if (node->right) q.push(node->right);
+        }
+        cout << endl; // Move to the next line for next level
+    }
+}
+
+
+
+
+
+int main() {
+    int n;
+    cin >> n;
+    vector<string> arr(n);
+    for (int i = 0; i < n; i++)
+        cin >> arr[i];
+
+    TreeNode* root = buildTree(arr);
+
+    cout << "Level Order Traversal:" << endl;
+    levelOrder(root);
+
+    return 0;
+}
+
+5. Binary Tree Zigzag Level Order Traversal
+
+root = [3,9,20,null,null,15,7]
+Output: [[3],[20,9],[15,7]]
+
+
+Example 2:
+
+Input: root = [1]
+Output: [[1]]
+Example 3:
+
+Input: root = []
+Output: []
+
+Given the root of a binary tree, return the zigzag level order traversal of its nodes' values. (i.e., from left to right, then right to left for the next level and alternate between).
+
+
+
+
+
+
+// Definition for a binary tree node
+struct TreeNode {
+    int val;
+    TreeNode* left;
+    TreeNode* right;
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+};
+
+// Function to build a binary tree from level order input (with "null" values)
+TreeNode* buildTree(vector<string>& arr) {
+    if (arr.empty() || arr[0] == "null")
+        return nullptr;
+
+    TreeNode* root = new TreeNode(stoi(arr[0]));
+    queue<TreeNode*> q;
+    q.push(root);
+
+    int i = 1;
+    while (!q.empty() && i < arr.size()) {
+        TreeNode* node = q.front();
+        q.pop();
+
+        // Left child
+        if (i < arr.size() && arr[i] != "null") {
+            node->left = new TreeNode(stoi(arr[i]));
+            q.push(node->left);
+        }
+        i++;
+
+        // Right child
+        if (i < arr.size() && arr[i] != "null") {
+            node->right = new TreeNode(stoi(arr[i]));
+            q.push(node->right);
+        }
+        i++;
+    }
+
+    return root;
+}
+
+// ✅ Zigzag Level Order Traversal
+void zigzagLevelOrder(TreeNode* root) {
+    if (!root) return;
+
+    queue<TreeNode*> q;
+    q.push(root);
+    bool leftToRight = true;  // start direction
+
+    cout << "Zigzag Level Order Traversal:\n";
+
+    while (!q.empty()) {
+        int size = q.size();
+        vector<int> level;
+
+        for (int i = 0; i < size; i++) {
+            TreeNode* node = q.front();
+            q.pop();
+
+            level.push_back(node->val);
+
+            if (node->left) q.push(node->left);
+            if (node->right) q.push(node->right);
+        }
+
+        if (!leftToRight) 
+        {
+            reverse(level.begin(), level.end());
+        }
+
+        for (int val : level) {
+            cout << val << " ";
+        }
+        cout << endl;
+
+        // Flip direction for next level
+        leftToRight = !leftToRight;
+    }
+}
+
+int main() {
+    int n;
+    cin >> n;
+    vector<string> arr(n);
+    for (int i = 0; i < n; i++)
+        cin >> arr[i];
+
+    TreeNode* root = buildTree(arr);
+
+    zigzagLevelOrder(root);
+
+    return 0;
+}
+
+6. LeetCode 515: Find Largest Value in Each Tree Row.
+
+
+You’re given the root of a binary tree.
+You need to find the largest value in each level (row) of the tree.
+
+Return or print those values level by level.
+
+        1
+       / \
+      3   2
+     / \   \
+    5   3   9
+
+1 3 9
+
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+// Definition for a binary tree node
+struct TreeNode {
+    int val;
+    TreeNode* left;
+    TreeNode* right;
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+};
+
+// Function to build a binary tree from level order input (with "null" values)
+TreeNode* buildTree(vector<string>& arr) {
+    if (arr.empty() || arr[0] == "null")
+        return nullptr;
+
+    TreeNode* root = new TreeNode(stoi(arr[0]));
+    queue<TreeNode*> q;
+    q.push(root);
+
+    int i = 1;
+    while (!q.empty() && i < arr.size()) {
+        TreeNode* node = q.front();
+        q.pop();
+
+        // Left child
+        if (i < arr.size() && arr[i] != "null") {
+            node->left = new TreeNode(stoi(arr[i]));
+            q.push(node->left);
+        }
+        i++;
+
+        // Right child
+        if (i < arr.size() && arr[i] != "null") {
+            node->right = new TreeNode(stoi(arr[i]));
+            q.push(node->right);
+        }
+        i++;
+    }
+
+    return root;
+}
+
+// ✅ Function to find the largest value in each level (BFS)
+void largestValues(TreeNode* root) {
+    if (!root) return;
+
+    queue<TreeNode*> q;
+    q.push(root);
+
+    cout << "Largest value in each level:\n";
+
+    while (!q.empty()) {
+        int size = q.size();
+        int maxVal = INT_MIN;
+
+        for (int i = 0; i < size; i++) {
+            TreeNode* node = q.front();
+            q.pop();
+
+            maxVal = max(maxVal, node->val);
+
+            if (node->left) q.push(node->left);
+            if (node->right) q.push(node->right);
+        }
+
+        cout << maxVal << " ";
+    }
+    cout << endl;
+}
+
+int main() {
+    int n;
+    cin >> n;
+    vector<string> arr(n);
+    for (int i = 0; i < n; i++)
+        cin >> arr[i];
+
+    TreeNode* root = buildTree(arr);
+
+    largestValues(root);
+
+    return 0;
+}
+
+
+7. LeetCode 637: Average of Levels in Binary Tree.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+// Definition for a binary tree node
+struct TreeNode {
+    int val;
+    TreeNode* left;
+    TreeNode* right;
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+};
+
+// Function to build a binary tree from level order input (with "null" values)
+TreeNode* buildTree(vector<string>& arr) {
+    if (arr.empty() || arr[0] == "null")
+        return nullptr;
+
+    TreeNode* root = new TreeNode(stoi(arr[0]));
+    queue<TreeNode*> q;
+    q.push(root);
+
+    int i = 1;
+    while (!q.empty() && i < arr.size()) {
+        TreeNode* node = q.front();
+        q.pop();
+
+        // Left child
+        if (i < arr.size() && arr[i] != "null") {
+            node->left = new TreeNode(stoi(arr[i]));
+            q.push(node->left);
+        }
+        i++;
+
+        // Right child
+        if (i < arr.size() && arr[i] != "null") {
+            node->right = new TreeNode(stoi(arr[i]));
+            q.push(node->right);
+        }
+        i++;
+    }
+
+    return root;
+}
+
+// ✅ Function to find average of each level
+void averageOfLevels(TreeNode* root) {
+    if (!root) return;
+
+    queue<TreeNode*> q;
+    q.push(root);
+
+    cout << fixed << setprecision(5); 
+    // sets number of digits after the decimal point to 5. 
+    cout << "Average value at each level:\n";
+
+    while (!q.empty()) {
+        int size = q.size();
+        long long sum = 0;  // long long to prevent overflow
+
+        for (int i = 0; i < size; i++) {
+            TreeNode* node = q.front();
+            q.pop();
+
+            sum += node->val;
+
+            if (node->left) q.push(node->left);
+            if (node->right) q.push(node->right);
+        }
+
+        double avg = (double)sum / size;
+        cout << avg << " ";
+    }
+
+    cout << endl;
+}
+
+int main() {
+    int n;
+    cin >> n;
+    vector<string> arr(n);
+    for (int i = 0; i < n; i++)
+        cin >> arr[i];
+
+    TreeNode* root = buildTree(arr);
+
+    averageOfLevels(root);
+
+    return 0;
+}
 
 
 
