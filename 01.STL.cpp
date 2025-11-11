@@ -7,20 +7,24 @@ using namespace std;
 STL 
 
 1.Pairs 
-2.Vectors
-3.Lists
-4.Stacks
-5.Queue
+2.Vectors 
+3.Lists 
+4.Stacks 
+5.Queue 
 6.Priority Queue 
-7.Set
-8.Multiset
-9.Unordered Set
-10.Map 
-11.multimap
-12.unordered map 
+7.Set - 10th 
+8.Multiset - 10th 
+9.Unordered Set - 10th 
+10.Map - 10th 
+11.multimap - 10th 
+12.unordered map - 10th 
+
+
+
 
 
 */
+
 int main()
 {   
 
@@ -536,6 +540,7 @@ while (next_permutation(s.begin(),s.end()));
     {
         cout << value << " ";
     }
+
     cout << endl;
 
     // when we use & the actual is passed and not the copy of it 
@@ -759,13 +764,12 @@ while (next_permutation(s.begin(),s.end()));
             total_candies += candy_ct;
             bags_erase(last_it);
             
-
-
         }
-
-
-
     }
+
+    
+
+
 
 
 

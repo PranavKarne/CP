@@ -3,15 +3,14 @@
 3rd oct
 
 
-1.. Best Time to Buy and Sell Stock - minprice , maxprofit 
-2.. Strobogrammatic Number - 0,1,3,6,9
-3.. minimum product subset of an array - bitmasking 
-4.. Class room attendance tracker - simple unor_map problem
-5.. encrypted staircase problem 
-6.. lemonade change
-7.. find smallest common element in all rows - unor_map 
-8.. roman to integer - unor_map and one condition 
-
+1.. Best Time to Buy and Sell Stock - minprice , maxprofit -> 10th nov 
+2.. Strobogrammatic Number - 0,1,3,6,9 -> 10th nov 
+3.. minimum product subset of an array - bitmasking -> 10th nov 
+4.. Class room attendance tracker - simple unor_map problem -> 11th nov 
+5.. encrypted staircase problem - recursion -> 11th nov 
+6.. lemonade change -> 11th nov 
+7.. find smallest common element in all rows - unor_map -> 11th nov
+8.. roman to integer - unor_map and one condition -> 11th nov
 
 
 */ 
@@ -342,8 +341,8 @@ code :
     int n, m;
     cin >> n >> m;
 
-    vector<vector<int>> matrix(n, vector<int>(m));
-    vector<vector<int>>matrix(n,vector<int>(m));
+    vector<vector<int>> matrix(n,vector<int>(m));
+    
 
 
     for(int i = 0; i < n; i++) {
@@ -361,11 +360,15 @@ code :
     }
 
     int result = INT_MAX;
-    for(auto &it : freqmap) {
-        if(it.second == n) {
+    for(auto it : freqmap) 
+    {
+        if(it.second == n) 
+        {
             result = min(result, it.first);
         }
     }
+
+    
 
     if(result == INT_MAX) 
         cout << -1 << endl;
@@ -421,9 +424,8 @@ int romanToInt(string s)
             {'I',1} , {'V',5}, {'X',10} ,{'L',50} , {'C',100} , {'D',500} , {'M',1000}
         };
 
-
         int res = 0;
-        for(int i = 0; i < s.size() ; i++)
+        for(int i = 0; i < s.size() ; i++) 
         {
             if(i+1 < s.size() && pranav[s[i]] < pranav[s[i+1]])
             {
@@ -431,10 +433,7 @@ int romanToInt(string s)
             }
             else res += pranav[s[i]];
         }
-
         return res;
-
-        
     }
 
 Dry Run Example 3: s = "MCMXCIV" (= 1994)
@@ -460,12 +459,12 @@ i=6 → 'V'(5), no next → add → res=1989+5=1994
 
 int romantoint(string &s)
 {
-
+    // roamtoint -> map -> conditions
     map<char,int>pk = {{'I',1},{'V',5},{'X',10},{'L',50},{'D',500},{'C',100},{'M',1000},};
     int res = 0;
     for(int i = 0; i < s.size() ; i++)
     {
-        if(pk[s[i]] < pk[s[i+1]] && i+1 < s.size()) res -= pk[s[i]];
+        if(pk[s[i]] < pk[s[i+1]] && i+1 < s.size()) res -= pk[s[i]]; 
         else res += pk[s[i]];
     }
     return res;
@@ -534,17 +533,18 @@ bool lemonadeChange(vector<int>& bills)
         return true;
 }
 
+
+
 5. encrypted staircase problem - recursion 
 
-
-int countWays(int n, int m) {
+int countWays(int n, int m) 
+{
     if (n == 0) return 1;
     if (n < 0) return 0;
 
     int ways = 0;
-    for (int step = 1; step <= m; step++)
-        ways += countWays(n - step, m);
 
+    for (int i = 1; i <= m; step++) ways += countWays(n - i, m); 
     return ways;
 }
 
@@ -554,24 +554,31 @@ int countWays(int n, int m) {
 
 5th october
 
-1.. integer to roman 
-2.. reverse words in a string
-3.. Count Number of Homogenous Substrings
-4.. Minimum Cost to connect ropes
-5..  coin change 
-6.~~   Store Questions with Answers in Insertion Order
-7..  Print Matrix Rows 
-8..   Last Stone Weight 
-9.   Find the Winner of the Circular Game 
-10..   Maximum Candies Allocated to K Children
-11..  Koko Eating Bananas
-12..  Merge Strings Alternately
-13.~~   Different Ways to Add Parentheses 
-14..  arranging coins 
-15.. longest mountain in array - https://leetcode.com/problems/longest-mountain-in-array/description/
-16.. Find the K-Beauty of a Number.
-17..  Baseball Game.
-18.. Largest Number At Least Twice of Others.
+1.. integer to roman - 9th nov 
+2.. reverse words in a string - 9th nov 
+3.. Count Number of Homogenous Substrings - 9th nov 
+4.. Minimum Cost to connect ropes - 9th nov 
+5..  coin change - 9th nov 
+6.~~   Store Questions with Answers in Insertion Order (not needed)
+7..  Print Matrix Rows - 9th nov 
+8..   Last Stone Weight - 10th nov 
+9.   Find the Winner of the Circular Game - 10th nov 
+10..   Maximum Candies Allocated to K Children - 10th nov 
+11..  Koko Eating Bananas - 8th nov 
+12..  Merge Strings Alternately - 8th nov 
+13.~~   Different Ways to Add Parentheses (not needed)
+14.. arranging coins - 8th nov 
+
+
+15.. longest mountain in array - https://leetcode.com/problems/longest-mountain-in-array/description/ - 8th nov 
+16.. Find the K-Beauty of a Number. - 8th nov 
+17..  Baseball Game - 8th nov 
+18.. Largest Number At Least Twice of Others.  - 8th nov 
+
+
+
+
+
 
 */
 
@@ -657,7 +664,6 @@ string intToRoman(int num)
                 num -= values[i];             
             }
         }
-
         return result;  
 }
 
@@ -733,6 +739,7 @@ int counthomosubstrings(string s)
         else count = 1;
         ans += count;
     }
+
     ans = ans % MOD;
     return ans+1;
 
@@ -749,6 +756,9 @@ int connectSticks(vector<int>& sticks)
         // Use a min-heap to always access the smallest sticks efficiently
         // This ensures we minimize the cost by combining smallest sticks first
         priority_queue<int, vector<int>, greater<int>> minHeap;
+        priority_queue<int , vector<int> , greater<int>> minHeap;
+        priority_queue<int , vector<int> , greater<int>> minHeap;
+
 
         // Add all sticks to the min-heap
         for (const int& stickLength : sticks) {
@@ -827,7 +837,7 @@ int divisorSubstrings(int num, int k)
             int val = stoi(subStr);                   
             if (val != 0 && num % val == 0) count++; 
         }
-
+ 
         return count;
 }
 
@@ -989,6 +999,9 @@ Sample Output:
 int N , M ;
 cin >> N >> M;
 vector<vector<int>> matrix(N , vector<int>(M));
+vector<vector<int>> matrix(N , vector<int>(M));
+vector<vector<int>> pranavkarne1(n , vector<int>(M));
+
 
 for(int i = 0 ; i < N ; i++)
 {
@@ -1479,3 +1492,16 @@ public:
     }
     
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
