@@ -2,28 +2,28 @@
 
 1. Largest number atleast twice of others - over 
 2. Baseball game - over 
-3. Find the k-beauty of a number
+3. Find the k-beauty of a number - over 
 4. Longest mountain in array - over 
 5. Arranging coins - over 
 6. Merge strings altternatively - over 
-7. Koko eating bananas
-8. Integer to roman 
-9. Reverse words in string 
-10. Count number of substrings 
-11. Minimum cost to connect ropes 
-12. Coin change
-13. Print matrix Rows 
+7. Koko eating bananas - over 
+8. Integer to roman - lite 
+9. Reverse words in string - over 
+10. Count number of substrings - over 
+11. Minimum cost to connect ropes - over 
+12. Coin change - over 
+13. Print matrix Rows - over 
 14. Last stone weight - over 
-15. Find the winner of the circular game
-16. Maximum candies allocated to k children
+15. Find the winner of the circular game - over 
+16. Maximum candies allocated to k children 
 17. Best time to buy and sell stock - over 
-18. Strogrammatic number
+18. Strogrammatic number - over 
 19. minimum product subset of an array 
 20. class room attendence tracker - over 
 21. encrypted staircase problem - over 
 22. lemonade change - over 
 23. find the smallest common element in all rows - over 
-24. roman to integer 
+24. roman to integer - lite 
 
 1.largest number atleast twice of others
 
@@ -196,6 +196,165 @@ int calPoints(vector<string>& operations)
 
     }
 
+3. k beauty of a number
+
+The k-beauty of an integer num is defined as the number of substrings of num when it is read as a string that meet the following conditions:
+
+It has a length of k.
+It is a divisor of num.
+Given integers num and k, return the k-beauty of num.
+
+Note:
+
+Leading zeros are allowed.
+0 is not a divisor of any value.
+A substring is a contiguous sequence of characters in a string.
+
+
+int divisorSubstrings(int num, int k) 
+    {   
+        string numStr = to_string(num);
+        int n = numStr.size();
+        int count = 0;
+
+        for (int i = 0; i <= n-k ; i++) {
+            string subStr = numStr.substr(i, k);   
+            int val = stoi(subStr);                   
+            if (val != 0 && num % val == 0) count++; 
+        }
+
+        return count;
+    }
+
+7. koko eating bananas
+
+Koko loves to eat bananas. There are n piles of bananas, the ith pile has piles[i] bananas. The guards have gone and will come back in h hours.
+
+Koko can decide her bananas-per-hour eating speed of k. Each hour, she chooses some pile of bananas and eats k bananas from that pile. If the pile has less than k bananas, she eats all of them instead and will not eat any more bananas during this hour.
+
+Koko likes to eat slowly but still wants to finish eating all the bananas before the guards return.
+
+Return the minimum integer k such that she can eat all the bananas within h hours.
+
+Example 1:
+
+Input: piles = [3,6,7,11], h = 8
+Output: 4
+Example 2:
+
+Input: piles = [30,11,23,4,20], h = 5
+Output: 30
+Example 3:
+
+Input: piles = [30,11,23,4,20], h = 6
+Output: 23
+
+
+code:
+    long long  totalhours(vector<int>&piles , long long h)
+    {
+        long long  hours = 0;
+        long long  n = piles.size();
+        for(long long  i = 0 ; i < n ; i++)
+        {
+            hours += ceil((double)(piles[i]) / (double)(h));
+        }
+        
+        return hours;
+    }
+
+    long long minEatingSpeed(vector<int>& piles, long long  h) 
+    {   
+
+        sort(piles.begin() , piles.end());
+        long long n = piles.size();
+        long long  max_element = piles[n-1];
+        long long low = 1;
+        long long  high = max_element;
+        while(low <= high)
+        {
+            long long mid = low + (high - low)/2 ;
+            long long  res = totalhours(piles,mid);
+            if(res <= h) high = mid - 1;
+            else low = mid + 1;
+        }
+
+        return low;
+    }
+
+
+9. reverse words in a string 
+
+    string reverseWords(string s) 
+    {
+        stringstream ss(s);
+        string word, result;
+        while(ss >> word){
+            if(result.empty()) result = word;
+            else result = word + " " + result;
+        }
+        return result;
+    }
+
+10. Count number of substrings 
+
+Given a string s, return the number of homogenous substrings of s. Since the answer may be too large, return it modulo 109 + 7.
+
+A string is homogenous if all the characters of the string are the same.
+
+A substring is a contiguous sequence of characters within a string.
+
+ 
+
+Example 1:
+
+Input: s = "abbcccaa"
+Output: 13
+Explanation: The homogenous substrings are listed as below:
+"a"   appears 3 times.
+"aa"  appears 1 time.
+"b"   appears 2 times.
+"bb"  appears 1 time.
+"c"   appears 3 times.
+"cc"  appears 2 times.
+"ccc" appears 1 time.
+3 + 1 + 2 + 1 + 3 + 2 + 1 = 13.
+Example 2:
+
+Input: s = "xy"
+Output: 2
+Explanation: The homogenous substrings are "x" and "y".
+Example 3:
+
+Input: s = "zzzzz"
+Output: 15
+
+
+
+
+int counthomosubstrings(string s)
+{
+    long long ans = 0;
+    long long count = 1;
+
+    const int MOD = 1e9 + 7;
+
+    for(int i = 1; i < s.size() ; i++)
+    {
+        if(s[i] == s[i-1]) count++;
+        else count = 1;
+        ans += count;
+    }
+
+    ans = ans % MOD;
+    return ans+1;
+
+}
+
+
+
+
+11. Minimum Cost to connect ropes
 
 
 
@@ -204,16 +363,201 @@ int calPoints(vector<string>& operations)
 
 
 
-11th nov 
 
-1. class room attendence tracker - over 
-2. encrypted staircase problem - over 
-3. lemonade change - over 
-4. find the smallest common element in all rows - over 
-5. roman to integer 
+int connectSticks(vector<int>& sticks) 
+{
+        // Use a min-heap to always access the smallest sticks efficiently
+        // This ensures we minimize the cost by combining smallest sticks first
+        priority_queue<int, vector<int>, greater<int>> minHeap;
+        priority_queue<int , vector<int> , greater<int>> minHeap;
+        priority_queue<int , vector<int> , greater<int>> minHeap;
+        priority_queue<int , vector<int> , greater<int>>minHeap;
+        priority_queue<int , vector<int> , greater<int>>minHeap;
+        pririty_queue<int , vector<int> , greater<int>>minHeap;
 
 
-1. class room attendence tracker
+
+
+
+        // Add all sticks to the min-heap
+        for (int i = 0 ; i < sticks.size() ; i++) {
+            minHeap.push(sticks[i]);
+        }
+
+        // Track the total cost of connecting all sticks
+        int totalCost = 0;
+
+        // Keep combining sticks until only one remains
+        while (minHeap.size() > 1)
+        {
+            // Extract the two smallest sticks
+            int firstSmallest = minHeap.top();
+            minHeap.pop();
+
+            int secondSmallest = minHeap.top();
+            minHeap.pop();
+
+            // Calculate the cost of combining these two sticks
+            int combinedLength = firstSmallest + secondSmallest;
+
+            // Add the cost to the total
+            totalCost += combinedLength;
+
+            // Push the combined stick back to the heap for further combinations
+            minHeap.push(combinedLength);
+        }
+
+        return totalCost;
+}
+
+
+12. coin change 
+
+You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money.
+
+Return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.
+
+You may assume that you have an infinite number of each kind of coin.
+
+Example 1:
+
+Input: coins = [1,2,5], amount = 11
+Output: 3
+Explanation: 11 = 5 + 5 + 1
+Example 2:
+
+Input: coins = [2], amount = 3
+Output: -1
+Example 3:
+
+Input: coins = [1], amount = 0
+Output: 0
+
+int coinChange(vector<int>& coins, int amount) 
+{
+        sort(coins.rbegin() , coins.rend());
+        long long  count = 0;
+        for(long long  coin : coins)
+        {
+            if(amount >= coin)
+            {
+                int use = amount / coin ;
+                count += use;
+                amount = amount % coin;
+            }
+        }
+
+        if(amount != 0) return -1;
+        return count;
+}
+
+
+13. print matrix rows 
+
+
+Given an an N×N matrix, print its rows as they appear.
+
+problem
+
+Rahul is given a row of numbers where each row and columns are same.
+Rahul now prints the numbers of the rows as shown in the following manner.
+Help Rahul to write the code .
+
+The first line of input consists of the size followed by the row numbers.
+
+Sample Input:
+3
+1 2 3
+4 5 6
+7 8 9
+
+Explanation:
+
+1<-2<-3
+|
+4->5->6
+|
+7<-8<-9
+
+Sample Output:
+3 2 1 4 5 6 9 8 7
+
+vector<vector<int>> matrixname(n,vector<int>(M));
+
+
+
+for(int i = 0 ; i < N ; i++)
+{
+    for(int j = 0 ; j < M ; j++)
+    {
+        cin >> matrix[i][j];
+    }
+}
+
+for(int i = 0 ; i < N ; i++)
+{
+    if(i % 2 == 0) // even row - print right to left 
+    {
+        for(int j = M - 1 ; j >= 0 ; j--) 
+        {
+            cout << matrix[i][j] << endl;
+        }
+    }
+    else
+    {   // odd row - prints from left to right 
+        for(int j = 0 ; j < M ; j++)
+        {
+            cout << matrix[i][j] << endl;
+        }
+
+    }
+}
+
+15. Find the winner of the circular game 
+
+There are n friends that are playing a game. The friends are sitting in a circle and are numbered from 1 to n in clockwise order. More formally, moving clockwise from the ith friend brings you to the (i+1)th friend for 1 <= i < n, and moving clockwise from the nth friend brings you to the 1st friend.
+
+The rules of the game are as follows:
+
+Start at the 1st friend.
+Count the next k friends in the clockwise direction including the friend you started at. The counting wraps around the circle and may count some friends more than once.
+The last friend you counted leaves the circle and loses the game.
+If there is still more than one friend in the circle, go back to step 2 starting from the friend immediately clockwise of the friend who just lost and repeat.
+Else, the last friend in the circle wins the game.
+Given the number of friends, n, and an integer k, return the winner of the game.
+
+int findwinner(int n , int k)
+    {
+        int winner = 0;
+        for(int i = 1; i <= n ; i++)
+        {
+            winner = (winner + k) % i;
+        }
+        return winner + 1; 
+
+    }
+
+
+
+
+    
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+20. class room attendence tracker
 
 A teacher keeps track of student names for each day of class. Some students attend multiple days, so their names appear multiple times in the attendance list.
 
@@ -620,3 +964,39 @@ int lastStoneWeight(vector<int>& stones)
         if(pq.empty()) return 0;
         else return pq.top();
 }
+
+16. Maximum candies allocated to k children
+
+
+bool distribution(vector<int>& candies , long long k , long long mid)
+    {
+        long long count = 0;
+        for(int c : candies)
+        {
+            count += c / mid;
+        }
+        return count >= k;
+    }
+
+int maximumCandies(vector<int>& candies, long long k) 
+{   
+        long long low = 1;
+        long long high = *max_element(candies.begin() , candies.end());
+        long long ans = 0;
+        while(low <= high)
+        {
+            long long  mid = low + (high - low)/2;
+            if(distribution(candies,k,mid))
+            {
+                ans  = mid;
+                low = mid + 1;
+            }
+            else high = mid - 1;
+        }
+        return ans;        
+}
+
+
+
+
+

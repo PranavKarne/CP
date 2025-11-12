@@ -649,6 +649,8 @@ bool dfs(TreeNode* node , int val)
 }
 
 
+
+
 bool isUnivalTree(TreeNode* root) 
 {   
     if(root == nullptr) return true;
@@ -666,6 +668,7 @@ int main()
         cin >> arr[i];
 
     TreeNode* root = buildTree(arr);
+    
     
 
     
@@ -744,6 +747,7 @@ void levelOrder(TreeNode* root) {
         cout << endl; // Move to the next line for next level
     }
 }
+
 
 
 
@@ -861,11 +865,16 @@ void zigzagLevelOrder(TreeNode* root) {
         cout << endl;
 
         // Flip direction for next level
-        leftToRight = !leftToRight;
+        leftToRight = !leftToRight; 
     }
 }
 
-int main() {
+
+
+
+
+int main() 
+{
     int n;
     cin >> n;
     vector<string> arr(n);
@@ -950,7 +959,8 @@ void largestValues(TreeNode* root) {
 
     cout << "Largest value in each level:\n";
 
-    while (!q.empty()) {
+    while (!q.empty()) 
+    {
         int size = q.size();
         int maxVal = INT_MIN;
 
@@ -969,7 +979,11 @@ void largestValues(TreeNode* root) {
     cout << endl;
 }
 
-int main() {
+
+
+
+int main() 
+{
     int n;
     cin >> n;
     vector<string> arr(n);
@@ -1030,7 +1044,8 @@ TreeNode* buildTree(vector<string>& arr) {
 }
 
 // ✅ Function to find average of each level
-void averageOfLevels(TreeNode* root) {
+void averageOfLevels(TreeNode* root) 
+{
     if (!root) return;
 
     queue<TreeNode*> q;
@@ -1040,7 +1055,8 @@ void averageOfLevels(TreeNode* root) {
     // sets number of digits after the decimal point to 5. 
     cout << "Average value at each level:\n";
 
-    while (!q.empty()) {
+    while (!q.empty()) 
+    {
         int size = q.size();
         long long sum = 0;  // long long to prevent overflow
 
@@ -1061,7 +1077,9 @@ void averageOfLevels(TreeNode* root) {
     cout << endl;
 }
 
-int main() {
+
+int main() 
+{
     int n;
     cin >> n;
     vector<string> arr(n);
@@ -1076,13 +1094,14 @@ int main() {
 }
 
 
-8. Maximum Level Sum of a Binary Tree
+8. Maximum Level Sum of a Binary Tree 
 
 #include <bits/stdc++.h>
 using namespace std;
 
 // Definition for a binary tree node
-struct TreeNode {
+struct TreeNode 
+{
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -1121,9 +1140,12 @@ TreeNode* buildTree(vector<string>& arr) {
     return root;
 }
 
+
+
 // ✅ Function to find the level with maximum sum
-int maxLevelSum(TreeNode* root) {
-    if (!root) return 0;
+int maxLevelSum(TreeNode* root) 
+{
+    if (!root) return 0; 
 
     queue<TreeNode*> q;
     q.push(root);
@@ -1133,7 +1155,7 @@ int maxLevelSum(TreeNode* root) {
     long long maxSum = LLONG_MIN;
 
     while (!q.empty()) {
-        level++;
+        level++; // v v imp 
         int size = q.size();
         long long sum = 0;
 
@@ -1147,7 +1169,8 @@ int maxLevelSum(TreeNode* root) {
             if (node->right) q.push(node->right);
         }
 
-        if (sum > maxSum) {
+        if (sum > maxSum) 
+        {
             maxSum = sum;
             ansLevel = level;
         }

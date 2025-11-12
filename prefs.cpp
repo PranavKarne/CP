@@ -107,16 +107,27 @@ bool isStrobogrammatic(string &num) {
     }
     return rotated == num;
 }
-bool isStro(string num)
+// 0 , 1 , 8 -> ki same ee
+// 6 ki 9 , 9 ki 6 
+
+bool isStrobogrammatci(string &num)
 {
     string rotated = "";
-    for(int i = num.size() - 1 ; i >=)
+    for(int i = num.size() - 1 ; i >= 0; i--)
     {
         char c = num[i];
+        if(c == '0' || c == '1' || c == '8')
+        {
+            rotated += c;
+        }
+        else if(c == '6') rotated += '9';
+        else if (c == '9') rotated += '6';
+        else return false;
 
     }
-    // 0 , 1 , 8 -> rotated += c[i];
+    return rotated == num;
 }
+
 int main() 
 {
     string num; cin >> num;
@@ -1001,6 +1012,9 @@ cin >> N >> M;
 vector<vector<int>> matrix(N , vector<int>(M));
 vector<vector<int>> matrix(N , vector<int>(M));
 vector<vector<int>> pranavkarne1(n , vector<int>(M));
+vector<vector<int>> matrixname(n,vector<int>(M));
+vector<vector<int>> matrixname(n,vector<int>(M));
+
 
 
 for(int i = 0 ; i < N ; i++)
@@ -1015,7 +1029,7 @@ for(int i = 0 ; i < N ; i++)
 {
     if(i % 2 == 0) // even row - print right to left 
     {
-        for(int j = M - 1 ; j >= 0 ; j--)
+        for(int j = M - 1 ; j >= 0 ; j--) 
         {
             cout << matrix[i][j] << endl;
         }
@@ -1027,6 +1041,25 @@ for(int i = 0 ; i < N ; i++)
             cout << matrix[i][j] << endl;
         }
 
+    }
+}
+
+for(int i = 0 ; i < N ; i++)
+{
+    if(i % 2 == 0) // even row - print right to left
+    {
+        for(int j = M - 1 ; j >= 0 ; j--)
+        {
+            cout << matrix[i][j] << endl;
+        }
+    }
+    else 
+    {  // odd row - prints froom left to right 
+        for(int j = 0; j < M ; j++)
+        {
+            cout << matrix[i][j] << endl;
+
+        }
     }
 }
 
@@ -1489,6 +1522,27 @@ public:
             winner = (winner + k) % i;
         }
         return winner + 1; // convert to 1-indexed
+    }
+
+    int findwinner(int n , int k)
+    {
+        int winner = 0;
+        for(int i = 1; i <= n ; i++)
+        {
+            winner = (winner + k) % i;
+        }
+        return winner + 1; 
+
+    }
+
+    int findwinner(int n , int k)
+    {
+        int winner = 0;
+        for(int i = 1 ; i <= n ; i++)
+        {
+            winner = (winner + k) % i;
+        }
+        return winner + 1;
     }
     
 };
